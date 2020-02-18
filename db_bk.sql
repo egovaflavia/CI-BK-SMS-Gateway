@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 18 Feb 2020 pada 15.01
+-- Generation Time: 18 Feb 2020 pada 16.51
 -- Versi Server: 5.6.37
 -- PHP Version: 5.6.31
 
@@ -103,7 +103,37 @@ CREATE TABLE IF NOT EXISTS `tatatertib` (
   `id_tatib` int(5) NOT NULL,
   `tatib` varchar(100) NOT NULL,
   `b_poin` int(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tatatertib`
+--
+
+INSERT INTO `tatatertib` (`id_tatib`, `tatib`, `b_poin`) VALUES
+(1, 'Terlambat masuk sekolah 15 menit setelah bel berbunyi', 5),
+(2, 'Tidak mengikuti upcara bendera', 5);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `users`
+--
+
+CREATE TABLE IF NOT EXISTS `users` (
+  `id_user` int(11) NOT NULL,
+  `username` varchar(20) NOT NULL,
+  `password` varchar(20) NOT NULL,
+  `nama` varchar(20) NOT NULL,
+  `jabatan` varchar(20) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `users`
+--
+
+INSERT INTO `users` (`id_user`, `username`, `password`, `nama`, `jabatan`) VALUES
+(1, 'admin', 'admin', 'Administrator', 'Guru BK'),
+(2, 'Guru TI', 'Guru TI', 'Guru TI', 'Guru TI');
 
 --
 -- Indexes for dumped tables
@@ -145,6 +175,26 @@ ALTER TABLE `siswa`
 ALTER TABLE `tatatertib`
   ADD PRIMARY KEY (`id_tatib`);
 
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id_user`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `tatatertib`
+--
+ALTER TABLE `tatatertib`
+  MODIFY `id_tatib` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
