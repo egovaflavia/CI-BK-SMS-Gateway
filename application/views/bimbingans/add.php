@@ -23,28 +23,35 @@
                 <?php $this->load->view('_partials/breadcrumbs'); ?>
                 <div class="card mb-3 ">
                     <div class="card-header">
-                        <a href="<?php echo site_url('users/index') ?>"><i class="fas fa-arrow-left"></i> Back</a>
+                        <a href="<?php echo base_url() ?>bimbingans/save"><i class="fas fa-arrow-left"></i> Back</a>
                     </div>
                     <div class="card-body">
 
-                        <form action="<?php echo site_url('') ?>" method="post" enctype="multipart/form-data">
+                        <form action="<?php echo base_url() ?>bimbingans/save" method="post" enctype="multipart/form-data">
                             <div class="form-group">
-                                <label>Username</label>
-                                <input name="username" type="text" class="form-control" placeholder="Username">
+                                <label>NIS</label>
+                                <input name="nis" type="number" class="form-control" placeholder="nis">
                             </div>
                             <div class="form-group">
-                                <label>Password</label>
-                                <input name="password" type="text" class="form-control" placeholder="Password">
+                                <label>Tanggal Bimbingan</label>
+                                <input name="tg_bim" type="date" class="form-control" placeholder="tg_bim">
                             </div>
                             <div class="form-group">
-                                <label>Nama</label>
-                                <input name="nama" type="text" class="form-control" placeholder="Nama">
+                                <label>Permasalahan</label>
+                                <input name="permasalahan" type="text" class="form-control" placeholder="permasalahan">
                             </div>
                             <div class="form-group">
-                                <label>Jabatan</label>
-                                <input name="jabatan" type="text" class="form-control" placeholder="Jabatan">
+                                <label>Penyelesaian</label>
+                                <input name="penyelesaian" type="text" class="form-control" placeholder="penyelesaian">
                             </div>
-
+                            <div class="form-group">
+                                <label>Keterangan Bimbingan</label>
+                                <input name="ket_bim" type="text" class="form-control" placeholder="ket_bim">
+                            </div>
+                            <div class="form-group">
+                                <label>NIP</label>
+                                <input name="nip" type="number" class="form-control" placeholder="nip">
+                            </div>
                             <input class="btn btn-success" type="submit" name="btn" value="Save">
                         </form>
                     </div>

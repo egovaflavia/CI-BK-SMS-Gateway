@@ -42,16 +42,16 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach ($datausers as $datauser) : ?>
+                                    <?php foreach ($datausers as $no => $datauser) : ?>
                                         <tr>
-                                            <td><?php echo $datauser->id_user ?></td>
+                                            <td><?php echo ++$no ?></td>
                                             <td><?php echo $datauser->username ?></td>
                                             <td><?php echo $datauser->password ?></td>
                                             <td><?php echo $datauser->nama ?></td>
                                             <td><?php echo $datauser->jabatan ?></td>
                                             <td width="120px">
                                                 <a class="btn btn-warning btn-sm" href="">Edit</a>
-                                                <a class="btn btn-danger btn-sm" href="">Hapus</a>
+                                                <a class="btn btn-danger btn-sm" href="<?php echo base_url() ?>users/delete/<?php echo $datauser->id_user ?>">Hapus</a>
                                             </td>
                                         </tr>
                                     <?php endforeach ?>

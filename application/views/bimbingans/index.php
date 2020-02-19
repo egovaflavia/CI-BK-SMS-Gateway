@@ -26,7 +26,7 @@
                         <i class="fas fa-table"></i>
                         Data Bimbingan</div>
                     <div class="card-body">
-                        <a href="<?php echo site_url('users/add') ?>" class="btn btn-primary">Tambah Data</a>
+                        <a href="<?php echo base_url() ?>bimbingans/add" class="btn btn-primary">Tambah Data</a>
                         <br>
                         <br>
                         <div class="table-responsive">
@@ -35,7 +35,7 @@
                                     <tr>
                                         <th>No</th>
                                         <th>NIS</th>
-                                        <th>Tanggal BImbingan</th>
+                                        <th>Tanggal Bimbingan</th>
                                         <th>Permasalhan</th>
                                         <th>Penyelesaian</th>
                                         <th>Keterangan Bimbingan</th>
@@ -56,7 +56,7 @@
                                             <td><?php echo $databimbingan->nip ?></td>
                                             <td width="120px">
                                                 <a class="btn btn-warning btn-sm" href="">Edit</a>
-                                                <a class="btn btn-danger btn-sm" href="">Hapus</a>
+                                                <a class="btn btn-danger btn-sm" href="<?php echo base_url() ?>bimbingans/delete/<?php echo $databimbingan->id_bimbingan ?>">Hapus</a>
                                             </td>
                                         </tr>
                                     <?php endforeach ?>

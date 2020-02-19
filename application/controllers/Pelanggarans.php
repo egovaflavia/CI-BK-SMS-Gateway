@@ -19,11 +19,16 @@ class Pelanggarans extends CI_Controller
         $data['datapelanggarans'] = $this->Mpelanggarans->getAll();
         $this->load->view('pelanggarans/index', $data);
     }
-
-    // Add a new item
+    public function save()
+    {
+        $Mpelanggarans = $this->Mpelanggarans;
+        $Mpelanggarans->save();
+        // Add a new item
+        redirect('pelanggarans/index', 'refresh');
+    }
     public function add()
     {
-        $this->load->view('Pelanggaran/add');
+        $this->load->view('pelanggarans/add');
     }
 
     //Update one item
@@ -34,6 +39,11 @@ class Pelanggarans extends CI_Controller
     //Delete one item
     public function delete($id = NULL)
     {
+        if (!isset($id)) show_404();
+
+        if ($this->Mpelanggarans->delete($id)) {
+            redirect('pelanggarans/index', 'refresh');
+        }
     }
 }
 

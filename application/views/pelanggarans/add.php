@@ -23,28 +23,35 @@
                 <?php $this->load->view('_partials/breadcrumbs'); ?>
                 <div class="card mb-3 ">
                     <div class="card-header">
-                        <a href="<?php echo site_url('users/index') ?>"><i class="fas fa-arrow-left"></i> Back</a>
+                        <a href="<?php echo base_url() ?>pelanggarans/index"><i class="fas fa-arrow-left"></i> Back</a>
                     </div>
                     <div class="card-body">
 
-                        <form action="<?php echo site_url('') ?>" method="post" enctype="multipart/form-data">
+                        <form action="<?php echo base_url() ?>pelanggarans/save" method="post" enctype="multipart/form-data">
                             <div class="form-group">
-                                <label>Username</label>
-                                <input name="username" type="text" class="form-control" placeholder="Username">
+                                <label>NIS</label>
+                                <input name="nis" type="number" class="form-control" placeholder="nis">
                             </div>
                             <div class="form-group">
-                                <label>Password</label>
-                                <input name="password" type="text" class="form-control" placeholder="Password">
+                                <label>Tanggal Pelanggaran</label>
+                                <input name="tgl_plg" type="date" class="form-control" placeholder="tanggal pelanggaran">
                             </div>
                             <div class="form-group">
-                                <label>Nama</label>
-                                <input name="nama" type="text" class="form-control" placeholder="Nama">
+                                <label>Id Tatib</label>
+                                <input name="id_tatib" type="text" class="form-control" placeholder="id tatib">
                             </div>
                             <div class="form-group">
-                                <label>Jabatan</label>
-                                <input name="jabatan" type="text" class="form-control" placeholder="Jabatan">
+                                <label>Poin</label>
+                                <input name="poin" type="number" class="form-control" placeholder="poin">
                             </div>
-
+                            <div class="form-group">
+                                <label>Keterangan Pelanggaran</label>
+                                <input name="ket_plg" type="text" class="form-control" placeholder="keterangan">
+                            </div>
+                            <div class="form-group">
+                                <label>NIP</label>
+                                <input name="nip" type="number" class="form-control" placeholder="nip">
+                            </div>
                             <input class="btn btn-success" type="submit" name="btn" value="Save">
                         </form>
                     </div>

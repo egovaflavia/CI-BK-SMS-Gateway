@@ -27,6 +27,11 @@ class Musers extends CI_Model
         return $this->db->insert($this->_table, $this); // simpan ke database
         //===================================== $this isi field yang akan di simpan 
     }
+
+    public function delete($id)
+    {
+        return $this->db->delete($this->_table, array("id_user" => $id));
+    }
 }
 
 /* End of file Musers.php */

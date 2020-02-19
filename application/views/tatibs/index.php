@@ -47,7 +47,7 @@
                                             <td><?php echo $tatib->b_poin ?></td>
                                             <td width="120px">
                                                 <a class="btn btn-warning btn-sm" href="">Edit</a>
-                                                <a class="btn btn-danger btn-sm" href="">Hapus</a>
+                                                <a class="btn btn-danger btn-sm" href="<?php echo base_url() ?>tatibs/delete/<?php echo $tatib->id_tatib ?>">Hapus</a>
                                             </td>
                                         </tr>
                                     <?php endforeach ?>

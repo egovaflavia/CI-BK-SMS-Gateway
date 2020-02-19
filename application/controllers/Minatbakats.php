@@ -19,21 +19,27 @@ class Minatbakats extends CI_Controller
         $data['dataminatbakats'] = $this->Mminatbakats->getAll();
         $this->load->view('minatbakats/index', $data);
     }
+    public function save()
+    {
+        $Mminatbakats = $this->Mminatbakats;
+        $Mminatbakats->save();
 
+        redirect('minatbakats/index', 'refresh');
+    }
     // Add a new item
     public function add()
     {
-        $this->load->view('Minatbakat/add');
+        $this->load->view('minatbakats/add');
     }
 
     //Update one item
-    public function update($id = NULL)
-    {
-    }
-
-    //Delete one item
     public function delete($id = NULL)
     {
+        if (!isset($id)) show_404();
+
+        if ($this->Mminatbakats->delete($id)) {
+            redirect('minatbakats/index', 'refresh');
+        }
     }
 }
 

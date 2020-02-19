@@ -50,11 +50,11 @@
                             </div>
                             <div class="form-group">
                                 <label>Alamat</label>
-                                <input name="alamat type=" text" class="form-control" placeholder="alamat">
+                                <input name="alamat" type="text" class="form-control" placeholder="alamat">
                             </div>
                             <div class="form-group">
                                 <label>NO HP Orang TUa</label>
-                                <input name="no hp" type="number" class="form-control" placeholder="no hp">
+                                <input name="no_hp" type="number" class="form-control" placeholder="no hp">
                             </div>
                             <input class="btn btn-success" type="submit" name="btn" value="Save">
                         </form>

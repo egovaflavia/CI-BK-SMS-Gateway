@@ -17,6 +17,23 @@ class Mminatbakats extends CI_Model
     {
         return $this->db->get($this->_table)->result();
     }
+    public function save()
+    {
+        $post               = $this->input->post();   // ambil data dari form 
+        $this->nis          = $post['nis'];
+        $this->tgl_mb        = $post['tgl_mb'];
+        $this->minat         = $post['minat'];
+        $this->bakat         = $post['bakat'];
+        $this->ket_mb          = $post['ket_mb'];
+        $this->nip             = $post['nip'];
+
+        return $this->db->insert($this->_table, $this); // simpan ke database
+        //===================================== $this isi field yang akan di simpan 
+    }
+    public function delete($id)
+    {
+        return $this->db->delete($this->_table, array("id_mb" => $id));
+    }
 }
 
 /* End of file Mtatibs.php */

@@ -43,6 +43,11 @@ class Users extends CI_Controller
     //Delete one item
     public function delete($id = NULL)
     {
+        if (!isset($id)) show_404();
+
+        if ($this->Musers->delete($id)) {
+            redirect('users/index', 'refresh');
+        }
     }
 }
 

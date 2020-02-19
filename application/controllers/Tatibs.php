@@ -41,6 +41,11 @@ class Tatibs extends CI_Controller
     //Delete one item
     public function delete($id = NULL)
     {
+        if (!isset($id)) show_404();
+
+        if ($this->Mtatibs->delete($id)) {
+            redirect('tatibs/index', 'refresh');
+        }
     }
 }
 

@@ -41,7 +41,11 @@ class Siswas extends CI_Controller
     //Delete one item
     public function delete($id = NULL)
     {
+        if (!isset($id)) show_404();
+
+        if ($this->Msiswas->delete($id)) {
+            redirect('siswas/index', 'refresh');
+        }
     }
 }
-
 /* End of file Controllername.php */

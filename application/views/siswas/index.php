@@ -26,7 +26,7 @@
                         <i class="fas fa-table"></i>
                         Data Siswa</div>
                     <div class="card-body">
-                        <a href="<?php echo site_url('users/add') ?>" class="btn btn-primary">Tambah Data</a>
+                        <a href="<?php echo base_url() ?>siswas/add" class="btn btn-primary">Tambah Data</a>
                         <br>
                         <br>
                         <div class="table-responsive">
@@ -60,7 +60,7 @@
                                             <td><?php echo $datasiswa->no_hp_ortu ?></td>
                                             <td width="120px">
                                                 <a class="btn btn-warning btn-sm" href="">Edit</a>
-                                                <a class="btn btn-danger btn-sm" href="">Hapus</a>
+                                                <a class="btn btn-danger btn-sm" href="<?php echo base_url() ?>siswas/delete/<?php echo $datasiswa->nis ?>">Hapus</a>
                                             </td>
                                         </tr>
                                     <?php endforeach ?>
