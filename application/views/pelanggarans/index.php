@@ -24,9 +24,9 @@
                 <div class="card mb-3">
                     <div class="card-header">
                         <i class="fas fa-table"></i>
-                        Data Tata Tertib</div>
+                        Data Pelanggaran</div>
                     <div class="card-body">
-                        <a href="<?php echo base_url() ?>tatibs/add" class="btn btn-primary">Tambah Data</a>
+                        <a href="<?php echo site_url('users/add') ?>" class="btn btn-primary">Tambah Data</a>
                         <br>
                         <br>
                         <div class="table-responsive">
@@ -34,17 +34,26 @@
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>Tata Tertib</th>
-                                        <th>Bobot Poin</th>
+                                        <th>NIS</th>
+                                        <th>Tanggal Pelanggaran</th>
+                                        <th>Id _Tatib</th>
+                                        <th>Poin</th>
+                                        <th>Keterangan Pelanggaran</th>
+                                        <th>NIP
                                         <th>Aksi</th>
+                                        </th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach ($tatibs as $no => $tatib) : ?>
+                                    <?php foreach ($datapelanggarans as $no => $datapelanggaran) : ?>
                                         <tr>
                                             <td><?php echo ++$no ?></td>
-                                            <td><?php echo $tatib->tatib ?></td>
-                                            <td><?php echo $tatib->b_poin ?></td>
+                                            <td><?php echo $datapelanggaran->nis ?></td>
+                                            <td><?php echo $datapelanggaran->tgl_plg ?></td>
+                                            <td><?php echo $datapelanggaran->id_tatib ?></td>
+                                            <td><?php echo $datapelanggaran->poin ?></td>
+                                            <td><?php echo $datapelanggaran->ket_plg ?></td>
+                                            <td><?php echo $datapelanggaran->nip ?></td>
                                             <td width="120px">
                                                 <a class="btn btn-warning btn-sm" href="">Edit</a>
                                                 <a class="btn btn-danger btn-sm" href="">Hapus</a>

@@ -26,6 +26,15 @@ class Users extends CI_Controller
         $this->load->view('users/add');
     }
 
+    public function simpan()
+    {
+        $Musers = $this->Musers;
+        $Musers->save();
+
+        redirect('users/index', 'refresh');
+    }
+
+
     //Update one item
     public function update($id = NULL)
     {

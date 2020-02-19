@@ -2,35 +2,28 @@
 
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Tatibs extends CI_Controller
+class Pelanggarans extends CI_Controller
 {
 
     public function __construct()
     {
         parent::__construct();
         //Load Dependencies
-        $this->load->model('Mtatibs');
+        $this->load->model('Mpelanggarans');
         $this->load->library("form_validation");
     }
 
     // List all your items
     public function index($offset = 0)
     {
-        $data['tatibs'] = $this->Mtatibs->getAll();
-        $this->load->view('tatibs/index', $data);
+        $data['datapelanggarans'] = $this->Mpelanggarans->getAll();
+        $this->load->view('pelanggarans/index', $data);
     }
 
     // Add a new item
     public function add()
     {
-        $this->load->view('tatibs/add');
-    }
-
-    public function save()
-    {
-        $Mtatibs = $this->Mtatibs;
-        $Mtatibs->save();
-        redirect('tatibs/index', 'refresh');
+        $this->load->view('Pelanggaran/add');
     }
 
     //Update one item

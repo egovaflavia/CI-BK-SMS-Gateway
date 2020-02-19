@@ -23,11 +23,11 @@
                 <?php $this->load->view('_partials/breadcrumbs'); ?>
                 <div class="card mb-3 ">
                     <div class="card-header">
-                        <a href="<?php echo base_url() ?>users/index"><i class="fas fa-arrow-left"></i> Back</a>
+                        <a href="<?php echo site_url('users/index') ?>"><i class="fas fa-arrow-left"></i> Back</a>
                     </div>
                     <div class="card-body">
 
-                        <form action="<?php echo base_url() ?>users/simpan" method="post" enctype="multipart/form-data">
+                        <form action="<?php echo site_url('') ?>" method="post" enctype="multipart/form-data">
                             <div class="form-group">
                                 <label>Username</label>
                                 <input name="username" type="text" class="form-control" placeholder="Username">

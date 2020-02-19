@@ -24,9 +24,9 @@
                 <div class="card mb-3">
                     <div class="card-header">
                         <i class="fas fa-table"></i>
-                        Data Tata Tertib</div>
+                        Data Bimbingan</div>
                     <div class="card-body">
-                        <a href="<?php echo base_url() ?>tatibs/add" class="btn btn-primary">Tambah Data</a>
+                        <a href="<?php echo site_url('users/add') ?>" class="btn btn-primary">Tambah Data</a>
                         <br>
                         <br>
                         <div class="table-responsive">
@@ -34,17 +34,26 @@
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>Tata Tertib</th>
-                                        <th>Bobot Poin</th>
+                                        <th>NIS</th>
+                                        <th>Tanggal BImbingan</th>
+                                        <th>Permasalhan</th>
+                                        <th>Penyelesaian</th>
+                                        <th>Keterangan Bimbingan</th>
+                                        <th>NIP
                                         <th>Aksi</th>
+                                        </th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach ($tatibs as $no => $tatib) : ?>
+                                    <?php foreach ($databimbingans as $no => $databimbingan) : ?>
                                         <tr>
                                             <td><?php echo ++$no ?></td>
-                                            <td><?php echo $tatib->tatib ?></td>
-                                            <td><?php echo $tatib->b_poin ?></td>
+                                            <td><?php echo $databimbingan->nis ?></td>
+                                            <td><?php echo $databimbingan->tg_bim ?></td>
+                                            <td><?php echo $databimbingan->permasalahan ?></td>
+                                            <td><?php echo $databimbingan->penyelesaian ?></td>
+                                            <td><?php echo $databimbingan->ket_bim ?></td>
+                                            <td><?php echo $databimbingan->nip ?></td>
                                             <td width="120px">
                                                 <a class="btn btn-warning btn-sm" href="">Edit</a>
                                                 <a class="btn btn-danger btn-sm" href="">Hapus</a>

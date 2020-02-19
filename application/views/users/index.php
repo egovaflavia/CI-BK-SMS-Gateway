@@ -24,9 +24,9 @@
                 <div class="card mb-3">
                     <div class="card-header">
                         <i class="fas fa-table"></i>
-                        Data Users</div>
+                        Data User</div>
                     <div class="card-body">
-                        <a href="<?php echo site_url('users/add') ?>" class="btn btn-primary">Tambah Data</a>
+                        <a href="<?php echo base_url() ?>users/add" class="btn btn-primary">Tambah Data</a>
                         <br>
                         <br>
                         <div class="table-responsive">
