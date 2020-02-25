@@ -59,7 +59,7 @@
                                             <td><?php echo $datasiswa->alamat ?></td>
                                             <td><?php echo $datasiswa->no_hp_ortu ?></td>
                                             <td width="120px">
-                                                <a class="btn btn-warning btn-sm" href="">Edit</a>
+                                                <a class="btn btn-warning btn-sm" href="<?php echo base_url() ?>siswas/edit/<?php echo $datasiswa->nis ?>">Edit</a>
                                                 <a class="btn btn-danger btn-sm" href="<?php echo base_url() ?>siswas/delete/<?php echo $datasiswa->nis ?>">Hapus</a>
                                             </td>
                                         </tr>

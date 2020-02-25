@@ -32,8 +32,18 @@ class Pelanggarans extends CI_Controller
     }
 
     //Update one item
-    public function update($id = NULL)
+    public function edit($id = NULL)
     {
+        $data['datapelanggaran'] = $this->Mpelanggarans->getById($id);
+        $this->load->view('pelanggarans/edit', $data);
+    }
+
+    public function update()
+    {
+        $Mpelanggarans = $this->Mpelanggarans;
+        $Mpelanggarans->aksi_update();
+
+        redirect('pelanggarans/index', 'refresh');
     }
 
     //Delete one item

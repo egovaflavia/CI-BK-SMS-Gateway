@@ -50,7 +50,7 @@
                                             <td><?php echo $datauser->nama ?></td>
                                             <td><?php echo $datauser->jabatan ?></td>
                                             <td width="120px">
-                                                <a class="btn btn-warning btn-sm" href="">Edit</a>
+                                                <a class="btn btn-warning btn-sm" href="<?php echo base_url() ?>users/edit/<?php echo $datauser->id_user ?>">Edit</a>
                                                 <a class="btn btn-danger btn-sm" href="<?php echo base_url() ?>users/delete/<?php echo $datauser->id_user ?>">Hapus</a>
                                             </td>
                                         </tr>

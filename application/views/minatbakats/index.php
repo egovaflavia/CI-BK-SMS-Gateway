@@ -55,7 +55,7 @@
                                             <td><?php echo $dataminatbakat->ket_mb ?></td>
                                             <td><?php echo $dataminatbakat->nip ?></td>
                                             <td width="120px">
-                                                <a class="btn btn-warning btn-sm" href="">Edit</a>
+                                                <a class="btn btn-warning btn-sm" href="<?php echo base_url() ?>minatbakats/edit/<?php echo $dataminatbakat->id_mb ?>">Edit</a>
                                                 <a class="btn btn-danger btn-sm" href="<?php echo base_url() ?>minatbakats/delete/<?php echo $dataminatbakat->id_mb ?>">Hapus</a>
                                             </td>
                                         </tr>

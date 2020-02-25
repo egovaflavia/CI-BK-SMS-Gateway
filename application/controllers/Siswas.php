@@ -34,10 +34,19 @@ class Siswas extends CI_Controller
     }
 
     //Update one item
-    public function update($id = NULL)
+    public function edit($id = NULL)
     {
+        $data['datasiswa'] = $this->Msiswas->getById($id);
+        $this->load->view('siswas/edit', $data);
     }
 
+    public function update()
+    {
+        $Msiswas = $this->Msiswas;
+        $Msiswas->aksi_update();
+
+        redirect('siswas/index', 'refresh');
+    }
     //Delete one item
     public function delete($id = NULL)
     {

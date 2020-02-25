@@ -55,7 +55,7 @@
                                             <td><?php echo $datapelanggaran->ket_plg ?></td>
                                             <td><?php echo $datapelanggaran->nip ?></td>
                                             <td width="120px">
-                                                <a class="btn btn-warning btn-sm" href="">Edit</a>
+                                                <a class="btn btn-warning btn-sm" href="<?php echo base_url() ?>pelanggarans/edit/<?php echo $datapelanggaran->id_pelanggaran ?>">Edit</a>
                                                 <a class="btn btn-danger btn-sm" href="<?php echo base_url() ?>pelanggarans/delete/<?php echo $datapelanggaran->id_pelanggaran ?>">Hapus</a>
                                             </td>
                                         </tr>

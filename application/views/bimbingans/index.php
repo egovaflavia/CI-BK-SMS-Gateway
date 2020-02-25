@@ -55,7 +55,7 @@
                                             <td><?php echo $databimbingan->ket_bim ?></td>
                                             <td><?php echo $databimbingan->nip ?></td>
                                             <td width="120px">
-                                                <a class="btn btn-warning btn-sm" href="">Edit</a>
+                                                <a class="btn btn-warning btn-sm" href="<?php echo base_url() ?>bimbingans/edit/<?php echo $databimbingan->id_bimbingan ?>">Edit</a>
                                                 <a class="btn btn-danger btn-sm" href="<?php echo base_url() ?>bimbingans/delete/<?php echo $databimbingan->id_bimbingan ?>">Hapus</a>
                                             </td>
                                         </tr>

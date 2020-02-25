@@ -32,12 +32,19 @@ class Tatibs extends CI_Controller
         $Mtatibs->save();
         redirect('tatibs/index', 'refresh');
     }
-
-    //Update one item
-    public function update($id = NULL)
+    public function edit($id = NULL)
     {
+        $data['datatatib'] = $this->Mtatibs->getById($id);
+        $this->load->view('tatibs/edit', $data);
     }
 
+    public function update()
+    {
+        $Mtatibs = $this->Mtatibs;
+        $Mtatibs->aksi_update();
+
+        redirect('tatibs/index', 'refresh');
+    }
     //Delete one item
     public function delete($id = NULL)
     {

@@ -33,10 +33,19 @@ class Bimbingans extends CI_Controller
         $this->load->view('bimbingans/add');
     }
     //Update one item
-    public function update($id = NULL)
+    public function edit($id = NULL)
     {
+        $data['databimbingan'] = $this->Mbimbingans->getById($id);
+        $this->load->view('bimbingans/edit', $data);
     }
 
+    public function update()
+    {
+        $Mbimbingans = $this->Mbimbingans;
+        $Mbimbingans->aksi_update();
+
+        redirect('bimbingans/index', 'refresh');
+    }
     //Delete one item
     public function delete($id = NULL)
     {

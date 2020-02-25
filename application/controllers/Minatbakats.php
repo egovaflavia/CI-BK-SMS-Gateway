@@ -33,6 +33,19 @@ class Minatbakats extends CI_Controller
     }
 
     //Update one item
+    public function edit($id = NULL)
+    {
+        $data['dataminatbakat'] = $this->Mminatbakats->getById($id);
+        $this->load->view('minatbakats/edit', $data);
+    }
+
+    public function update()
+    {
+        $Mminatbakats = $this->Mminatbakats;
+        $Mminatbakats->aksi_update();
+
+        redirect('minatbakats/index', 'refresh');
+    }
     public function delete($id = NULL)
     {
         if (!isset($id)) show_404();

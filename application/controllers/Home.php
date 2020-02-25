@@ -9,11 +9,6 @@ class Home extends CI_Controller
     {
         $this->load->view('overview');
     }
-
-    // public function home()
-    // {
-    //     echo "home";
-    // }
 }
 
 /* End of file Admin.php */

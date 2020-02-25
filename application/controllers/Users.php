@@ -36,8 +36,18 @@ class Users extends CI_Controller
 
 
     //Update one item
+    public function edit($id = NULL)
+    {
+        $data['datauser'] = $this->Musers->getById($id);
+        $this->load->view('users/edit', $data);
+    }
+
     public function update($id = NULL)
     {
+        $Musers = $this->Musers;
+        $Musers->aksi_update();
+
+        redirect('users/index', 'refresh');
     }
 
     //Delete one item
