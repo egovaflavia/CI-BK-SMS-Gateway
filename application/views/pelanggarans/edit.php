@@ -29,9 +29,11 @@
                     <div class="card-body">
                         <form action="<?php echo base_url() ?>pelanggarans/update" method="post" enctype="multipart/form-data">
                             <div class="form-group">
-                                <label>NIS</label>
-                                <input value="<?php echo $datapelanggaran->id_pelanggaran ?>" name="id" type="hidden">
-                                <input value="<?php echo $datapelanggaran->nis ?>" name="nis" type="text" class="form-control" placeholder="nis">
+                                <label>NIS</label><select name="nis" class="form-control">
+                                    <?php foreach ($datasiswas as $datasiswa) : ?>
+                                        <option value="<?php echo $datasiswa->nis ?>"><?php echo $datasiswa->nm_siswa ?></option>
+                                    <?php endforeach ?>
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label>Tanggal Pelanggaran</label>
@@ -47,7 +49,11 @@
                             </div>
                             <div class="form-group">
                                 <label>NIP</label>
-                                <input value="<?php echo $datapelanggaran->nip ?> " name=" nip" type="number" class="form-control" placeholder="nip">
+                                <select name="nip" class="form-control">
+                                    <?php foreach ($datagurus as $dataguru) : ?>
+                                        <option value="<?php echo $dataguru->nip ?>"><?php echo $dataguru->nm_guru ?></option>
+                                    <?php endforeach ?>
+                                </select>
                             </div>
                             <input class="btn btn-success" type="submit" name="btn" value="Save">
                         </form>

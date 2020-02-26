@@ -38,6 +38,7 @@ class Pelanggarans extends CI_Controller
     {
         $data['datapelanggaran'] = $this->Mpelanggarans->getById($id);
         $data['datasiswas'] = $this->Mpelanggarans->getAllSiswa();
+        $data['datagurus'] = $this->Mpelanggarans->getAllGuru();
         $this->load->view('pelanggarans/edit', $data);
     }
 
