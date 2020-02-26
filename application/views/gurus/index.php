@@ -24,9 +24,9 @@
                 <div class="card mb-3">
                     <div class="card-header">
                         <i class="fas fa-table"></i>
-                        Data Bimbingan</div>
+                        Data Siswa</div>
                     <div class="card-body">
-                        <a href="<?php echo base_url() ?>bimbingans/add" class="btn btn-primary">Tambah Data</a>
+                        <a href="<?php echo base_url() ?>gurus/add" class="btn btn-primary">Tambah Data</a>
                         <br>
                         <br>
                         <div class="table-responsive">
@@ -34,32 +34,24 @@
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>NIS</th>
-                                        <th>Nama Siswa</th>
-                                        <th>Tanggal Bimbingan</th>
-                                        <th>Permasalhan</th>
-                                        <th>Penyelesaian</th>
-                                        <th>Keterangan Bimbingan</th>
                                         <th>NIP</th>
-                                        <th>Nama Guru</th>
+                                        <th>Nama</th>
+                                        <th>Jabatan</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach ($databimbingans as $no => $databimbingan) : ?>
+                                    <?php foreach ($datagurus as $no => $dataguru) :
+                                        // var_dump($dataguru);
+                                    ?>
                                         <tr>
                                             <td><?php echo ++$no ?></td>
-                                            <td><?php echo $databimbingan->nis ?></td>
-                                            <td><?php echo $databimbingan->nm_siswa ?></td>
-                                            <td><?php echo $databimbingan->tg_bim ?></td>
-                                            <td><?php echo $databimbingan->permasalahan ?></td>
-                                            <td><?php echo $databimbingan->penyelesaian ?></td>
-                                            <td><?php echo $databimbingan->ket_bim ?></td>
-                                            <td><?php echo $databimbingan->nip ?></td>
-                                            <td><?php echo $databimbingan->nm_guru ?></td>
+                                            <td><?php echo $dataguru->nip ?></td>
+                                            <td><?php echo $dataguru->nm_guru ?></td>
+                                            <td><?php echo $dataguru->jabatan ?></td>
                                             <td width="120px">
-                                                <a class="btn btn-warning btn-sm" href="<?php echo base_url() ?>bimbingans/edit/<?php echo $databimbingan->id_bimbingan ?>">Edit</a>
-                                                <a class="btn btn-danger btn-sm" href="<?php echo base_url() ?>bimbingans/delete/<?php echo $databimbingan->id_bimbingan ?>">Hapus</a>
+                                                <a class="btn btn-warning btn-sm" href="<?php echo base_url() ?>gurus/edit/<?php echo $dataguru->nip ?>">Edit</a>
+                                                <a class="btn btn-danger btn-sm" href="<?php echo base_url() ?>gurus/delete/<?php echo $dataguru->nip ?>">Hapus</a>
                                             </td>
                                         </tr>
                                     <?php endforeach ?>

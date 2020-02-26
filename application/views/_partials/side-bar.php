@@ -16,6 +16,11 @@
             <span>Data Tata Tertib</span></a>
     </li>
     <li class="nav-item">
+        <a class="nav-link" href="<?php echo base_url() ?>gurus">
+            <i class="fas fa-fw fa-bars"></i>
+            <span>Data Guru</span></a>
+    </li>
+    <li class="nav-item">
         <a class="nav-link" href="<?php echo base_url() ?>siswas">
             <i class="fas fa-fw  fa-address-card"></i>
             <span>Data Siswa</span></a>

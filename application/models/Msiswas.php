@@ -37,11 +37,11 @@ class Msiswas extends CI_Model
         $post = $this->input->post(); // ambil data dari form 
 
         $this->ta = $post['ta'];
-        $this->nm_siswa = $post['nama'];
+        $this->nm_siswa = $post['nm_siswa'];
         $this->kelas = $post['kelas'];
         $this->jekel = $post['jekel'];
         $this->alamat = $post['alamat'];
-        $this->no_hp_ortu = $post['no_hp'];
+        $this->no_hp_ortu = $post['no_hp_ortu'];
         $this->nis = $post['nis'];
 
         return $this->db->update($this->_table, $this, array('nis' => $post['nis']));

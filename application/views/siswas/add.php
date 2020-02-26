@@ -23,7 +23,7 @@
                 <?php $this->load->view('_partials/breadcrumbs'); ?>
                 <div class="card mb-3 ">
                     <div class="card-header">
-                        <a href="<?php echo base_url() ?>siswas/save"><i class="fas fa-arrow-left"></i> Back</a>
+                        <a href="<?php echo base_url() ?>siswas/index"><i class="fas fa-arrow-left"></i> Back</a>
                     </div>
                     <div class="card-body">
 

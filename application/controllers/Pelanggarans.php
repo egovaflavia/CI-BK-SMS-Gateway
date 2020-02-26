@@ -28,7 +28,9 @@ class Pelanggarans extends CI_Controller
     }
     public function add()
     {
-        $this->load->view('pelanggarans/add');
+        $data['datasiswas'] = $this->Mpelanggarans->getAllSiswa();
+        $data['datagurus'] = $this->Mpelanggarans->getAllGuru();
+        $this->load->view('pelanggarans/add', $data);
     }
 
     //Update one item

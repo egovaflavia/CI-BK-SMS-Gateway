@@ -35,25 +35,31 @@
                                     <tr>
                                         <th>No</th>
                                         <th>NIS</th>
+                                        <th>Nama Siswa</th>
                                         <th>Tanggal Pelanggaran</th>
-                                        <th>Id _Tatib</th>
+                                        <th>Tata Tertib</th>
                                         <th>Poin</th>
                                         <th>Keterangan Pelanggaran</th>
-                                        <th>NIP
+                                        <th>NIP</th>
+                                        <th>Nama Guru</th>
                                         <th>Aksi</th>
                                         </th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach ($datapelanggarans as $no => $datapelanggaran) : ?>
+                                    <?php foreach ($datapelanggarans as $no => $datapelanggaran) :
+                                        //var_dump($datapelanggaran);
+                                    ?>
                                         <tr>
                                             <td><?php echo ++$no ?></td>
                                             <td><?php echo $datapelanggaran->nis ?></td>
+                                            <td><?php echo $datapelanggaran->nm_siswa ?></td>
                                             <td><?php echo $datapelanggaran->tgl_plg ?></td>
-                                            <td><?php echo $datapelanggaran->id_tatib ?></td>
-                                            <td><?php echo $datapelanggaran->poin ?></td>
+                                            <td><?php echo $datapelanggaran->tatib ?></td>
+                                            <td><?php echo $datapelanggaran->b_poin ?></td>
                                             <td><?php echo $datapelanggaran->ket_plg ?></td>
                                             <td><?php echo $datapelanggaran->nip ?></td>
+                                            <td><?php echo $datapelanggaran->nm_guru ?></td>
                                             <td width="120px">
                                                 <a class="btn btn-warning btn-sm" href="<?php echo base_url() ?>pelanggarans/edit/<?php echo $datapelanggaran->id_pelanggaran ?>">Edit</a>
                                                 <a class="btn btn-danger btn-sm" href="<?php echo base_url() ?>pelanggarans/delete/<?php echo $datapelanggaran->id_pelanggaran ?>">Hapus</a>

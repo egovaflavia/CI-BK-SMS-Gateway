@@ -26,7 +26,6 @@
                         <a href="<?php echo base_url() ?>siswas/index"><i class="fas fa-arrow-left"></i> Back</a>
                     </div>
                     <div class="card-body">
-                        <?php var_dump($datasiswa) ?>
                         <form action="<?php echo base_url('') ?>siswas/update" method="post" enctype="multipart/form-data">
                             <div class="form-group">
                                 <label>NIS</label>
@@ -50,7 +49,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Alamat</label>
-                                <input value="<?php echo $datasiswa->alamat ?>name=" alamat" type="text" class="form-control" placeholder="alamat">
+                                <input value="<?php echo $datasiswa->alamat ?>" name="alamat" type="text" class="form-control" placeholder="alamat">
                             </div>
                             <div class="form-group">
                                 <label>NO HP Orang Tua</label>

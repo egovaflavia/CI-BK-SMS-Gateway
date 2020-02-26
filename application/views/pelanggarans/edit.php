@@ -43,10 +43,6 @@
                                 <input value="<?php echo $datapelanggaran->id_tatib ?> " name=" id_tatib" type="text" class="form-control" placeholder="id tatib">
                             </div>
                             <div class="form-group">
-                                <label>Poin</label>
-                                <input value="<?php echo $datapelanggaran->poin ?> " name=" poin" type="number" class="form-control" placeholder="poin">
-                            </div>
-                            <div class="form-group">
                                 <label>Keterangan Pelanggaran</label>
                                 <input value="<?php echo $datapelanggaran->ket_plg ?> " name=" ket_plg" type="text" class="form-control" placeholder="keterangan">
                             </div>

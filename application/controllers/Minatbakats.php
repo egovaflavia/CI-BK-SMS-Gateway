@@ -26,12 +26,12 @@ class Minatbakats extends CI_Controller
 
         redirect('minatbakats/index', 'refresh');
     }
-    // Add a new item
     public function add()
     {
-        $this->load->view('minatbakats/add');
+        $data['datasiswas'] = $this->Mminatbakats->getAllSiswa();
+        $data['datagurus'] = $this->Mminatbakats->getAllGuru();
+        $this->load->view('minatbakats/add', $data);
     }
-
     //Update one item
     public function edit($id = NULL)
     {

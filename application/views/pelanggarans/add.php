@@ -30,7 +30,11 @@
                         <form action="<?php echo base_url() ?>pelanggarans/save" method="post" enctype="multipart/form-data">
                             <div class="form-group">
                                 <label>NIS</label>
-                                <input name="nis" type="number" class="form-control" placeholder="nis">
+                                <select name="nis" class="form-control">
+                                    <?php foreach ($datasiswas as $datasiswa) : ?>
+                                        <option value="<?php echo $datasiswa->nis ?>"><?php echo $datasiswa->nm_siswa ?></option>
+                                    <?php endforeach ?>
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label>Tanggal Pelanggaran</label>
@@ -38,11 +42,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Id Tatib</label>
-                                <input name="id_tatib" type="text" class="form-control" placeholder="id tatib">
-                            </div>
-                            <div class="form-group">
-                                <label>Poin</label>
-                                <input name="poin" type="number" class="form-control" placeholder="poin">
+                                <input name="id_tatib" type="number" class="form-control" placeholder="id tatib">
                             </div>
                             <div class="form-group">
                                 <label>Keterangan Pelanggaran</label>
@@ -50,7 +50,11 @@
                             </div>
                             <div class="form-group">
                                 <label>NIP</label>
-                                <input name="nip" type="number" class="form-control" placeholder="nip">
+                                <select name="nip" class="form-control">
+                                    <?php foreach ($datagurus as $dataguru) : ?>
+                                        <option value="<?php echo $dataguru->nip ?>"><?php echo $dataguru->nm_guru ?></option>
+                                    <?php endforeach ?>
+                                </select>
                             </div>
                             <input class="btn btn-success" type="submit" name="btn" value="Save">
                         </form>

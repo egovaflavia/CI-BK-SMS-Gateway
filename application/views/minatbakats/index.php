@@ -35,11 +35,13 @@
                                     <tr>
                                         <th>No</th>
                                         <th>NIS</th>
+                                        <th>Nama Siswa</th>
                                         <th>Tanggal Minat dan Bakat</th>
                                         <th>Minat</th>
                                         <th>Bakat</th>
                                         <th>Keterangan Minat Bakat</th>
-                                        <th>NIP
+                                        <th>NIP</th>
+                                        <th>Nama Guru</th>
                                         <th>Aksi</th>
                                         </th>
                                     </tr>
@@ -49,11 +51,13 @@
                                         <tr>
                                             <td><?php echo ++$no ?></td>
                                             <td><?php echo $dataminatbakat->nis ?></td>
+                                            <td><?php echo $dataminatbakat->nm_siswa ?></td>
                                             <td><?php echo $dataminatbakat->tgl_mb ?></td>
                                             <td><?php echo $dataminatbakat->minat ?></td>
                                             <td><?php echo $dataminatbakat->bakat ?></td>
                                             <td><?php echo $dataminatbakat->ket_mb ?></td>
                                             <td><?php echo $dataminatbakat->nip ?></td>
+                                            <td><?php echo $dataminatbakat->nm_guru ?></td>
                                             <td width="120px">
                                                 <a class="btn btn-warning btn-sm" href="<?php echo base_url() ?>minatbakats/edit/<?php echo $dataminatbakat->id_mb ?>">Edit</a>
                                                 <a class="btn btn-danger btn-sm" href="<?php echo base_url() ?>minatbakats/delete/<?php echo $dataminatbakat->id_mb ?>">Hapus</a>

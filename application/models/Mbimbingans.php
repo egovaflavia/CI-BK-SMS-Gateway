@@ -5,6 +5,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class Mbimbingans extends CI_Model
 {
     private $_table = "bimbingan_siswa";
+    private $_tablesiswa = "siswa";
+    private $_tableguru = "guru";
     public $id_bimbingan;
     public $nis;
     public $tg_bim;
@@ -15,7 +17,21 @@ class Mbimbingans extends CI_Model
 
     public function getAll()
     {
-        return $this->db->get($this->_table)->result();
+
+        $this->db->select('*');
+        $this->db->from($this->_table);
+        $this->db->join($this->_tablesiswa, 'bimbingan_siswa.nis = siswa.nis');
+        $this->db->join($this->_tableguru, 'guru.nip = guru.nip');
+        return $this->db->get()->result();
+    }
+
+    public function getAllSiswa()
+    {
+        return $this->db->get($this->_tablesiswa)->result();
+    }
+    public function getAllGuru()
+    {
+        return $this->db->get($this->_tableguru)->result();
     }
     public function save()
     {

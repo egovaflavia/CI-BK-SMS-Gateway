@@ -30,7 +30,9 @@ class Bimbingans extends CI_Controller
     }
     public function add()
     {
-        $this->load->view('bimbingans/add');
+        $data['datasiswas'] = $this->Mbimbingans->getAllSiswa();
+        $data['datagurus'] = $this->Mbimbingans->getAllGuru();
+        $this->load->view('bimbingans/add', $data);
     }
     //Update one item
     public function edit($id = NULL)

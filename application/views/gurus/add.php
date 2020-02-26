@@ -23,32 +23,23 @@
                 <?php $this->load->view('_partials/breadcrumbs'); ?>
                 <div class="card mb-3 ">
                     <div class="card-header">
-                        <a href="<?php echo base_url() ?>users/index"><i class="fas fa-arrow-left"></i> Back</a>
+                        <a href="<?php echo base_url() ?>gurus/index"><i class="fas fa-arrow-left"></i> Back</a>
                     </div>
                     <div class="card-body">
 
-                        <form action="<?php echo base_url() ?>users/simpan" method="post" enctype="multipart/form-data">
+                        <form action="<?php echo base_url('') ?>gurus/save" method="post" enctype="multipart/form-data">
                             <div class="form-group">
-                                <label>Username</label>
-                                <input name="username" type="text" class="form-control" placeholder="Username">
+                                <label>NIP</label>
+                                <input name="nip" type="number" class="form-control" placeholder="nip">
                             </div>
                             <div class="form-group">
-                                <label>Password</label>
-                                <input name="password" type="text" class="form-control" placeholder="Password">
+                                <label>Nama Guru</label>
+                                <input name="nm_guru" type="text" class="form-control" placeholder="nama guru">
                             </div>
                             <div class="form-group">
-                                <label>Nama</label>
-                                <input name="nama" type="text" class="form-control" placeholder="Nama">
+                                <label>Guru</label>
+                                <input name="jabatan" type="text" class="form-control" placeholder="guru">
                             </div>
-                            <div class="form-group">
-                                <label>Jabatan</label>
-                                <select name="jabatan" class="form-control">
-                                    <option value="Kepala Sekolah">Kepala Sekolah</option>
-                                    <option value="Guru">Guru</option>
-                                    <option value="Siswa">Siswa</option>
-                                </select>
-                            </div>
-
                             <input class="btn btn-success" type="submit" name="btn" value="Save">
                         </form>
                     </div>
