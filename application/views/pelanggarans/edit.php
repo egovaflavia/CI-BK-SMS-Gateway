@@ -25,9 +25,8 @@
                     <div class="card-header">
                         <a href="<?php echo base_url() ?>pelanggarans/index"><i class="fas fa-arrow-left"></i> Back</a>
                     </div>
+                    <?php var_dump($datasiswas) ?>
                     <div class="card-body">
-                        <?php //var_dump($datapelanggaran) 
-                        ?>
                         <form action="<?php echo base_url() ?>pelanggarans/update" method="post" enctype="multipart/form-data">
                             <div class="form-group">
                                 <label>NIS</label>
