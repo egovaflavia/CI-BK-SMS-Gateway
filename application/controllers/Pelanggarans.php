@@ -30,6 +30,7 @@ class Pelanggarans extends CI_Controller
     {
         $data['datasiswas'] = $this->Mpelanggarans->getAllSiswa();
         $data['datagurus'] = $this->Mpelanggarans->getAllGuru();
+        $data['datatatibs'] = $this->Mpelanggarans->getAllTatib();
         $this->load->view('pelanggarans/add', $data);
     }
 

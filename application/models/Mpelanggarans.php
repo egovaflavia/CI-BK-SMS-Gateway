@@ -29,6 +29,10 @@ class Mpelanggarans extends CI_Model
     {
         return $this->db->get($this->_tablesiswa)->result();
     }
+    public function getAllTatib()
+    {
+        return $this->db->get($this->_tabletatib)->result();
+    }
     public function getAllGuru()
     {
         return $this->db->get($this->_tableguru)->result();

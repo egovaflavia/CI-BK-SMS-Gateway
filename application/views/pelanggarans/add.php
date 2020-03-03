@@ -29,10 +29,10 @@
 
                         <form action="<?php echo base_url() ?>pelanggarans/save" method="post" enctype="multipart/form-data">
                             <div class="form-group">
-                                <label>NIS</label>
+                                <label>Nama Siswa yang Melanngar</label>
                                 <select name="nis" class="form-control">
                                     <?php foreach ($datasiswas as $datasiswa) : ?>
-                                        <option value="<?php echo $datasiswa->nis ?>"><?php echo $datasiswa->nm_siswa ?></option>
+                                        <option value="<?php echo $datasiswa->nis ?>"><?php echo $datasiswa->nm_siswa ?> | <?php echo $datasiswa->nis ?></option>
                                     <?php endforeach ?>
                                 </select>
                             </div>
@@ -41,15 +41,20 @@
                                 <input name="tgl_plg" type="date" class="form-control" placeholder="tanggal pelanggaran">
                             </div>
                             <div class="form-group">
-                                <label>Id Tatib</label>
-                                <input name="id_tatib" type="number" class="form-control" placeholder="id tatib">
+                                <label>Pelanggaran Tata Tertib</label>
+                                <select name="id_tatib" class="form-control">
+                                    <?php foreach ($datatatibs as $datatatib) :
+                                        var_dump($datatatib); ?>
+                                        <option value="<?php echo $datatatib->id_tatib ?>"><?php echo $datatatib->tatib ?></option>
+                                    <?php endforeach ?>
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label>Keterangan Pelanggaran</label>
                                 <input name="ket_plg" type="text" class="form-control" placeholder="keterangan">
                             </div>
                             <div class="form-group">
-                                <label>NIP</label>
+                                <label>Guru yang Manangani</label>
                                 <select name="nip" class="form-control">
                                     <?php foreach ($datagurus as $dataguru) : ?>
                                         <option value="<?php echo $dataguru->nip ?>"><?php echo $dataguru->nm_guru ?></option>

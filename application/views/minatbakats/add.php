@@ -29,7 +29,7 @@
 
                         <form action="<?php echo base_url() ?>minatbakats/save" method="post" enctype="multipart/form-data">
                             <div class="form-group">
-                                <label>NIS</label>
+                                <label>Siswa</label>
                                 <select name="nis" class="form-control">
                                     <?php foreach ($datasiswas as $datasiswa) : ?>
                                         <option value="<?php echo $datasiswa->nis ?>"><?php echo $datasiswa->nm_siswa ?></option>
@@ -53,7 +53,7 @@
                                 <input name="ket_mb" type="text" class="form-control" placeholder="keterangan">
                             </div>
                             <div class="form-group">
-                                <label>NIP</label>
+                                <label>Guru</label>
                                 <select name="nip" class="form-control">
                                     <?php foreach ($datagurus as $dataguru) : ?>
                                         <option value="<?php echo $dataguru->nip ?>"><?php echo $dataguru->nm_guru ?></option>
