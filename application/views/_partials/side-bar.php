@@ -46,8 +46,23 @@
             <span>SMS Gateway</span></a>
     </li>
     <li class="nav-item">
+        <a class="nav-link" href="<?php echo base_url() ?>laporan/siswa">
+            <i class="fas fa-fw fa-briefcase"></i>
+            <span>Laporan Siswa</span></a>
+    </li>
+    <li class="nav-item">
         <a class="nav-link" href="<?php echo base_url() ?>tatibs">
             <i class="fas fa-fw fa-briefcase"></i>
-            <span>Laporan</span></a>
+            <span>Laporan Bimbingan</span></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="<?php echo base_url() ?>tatibs">
+            <i class="fas fa-fw fa-briefcase"></i>
+            <span>Laporan Pelanggaran</span></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="<?php echo base_url() ?>tatibs">
+            <i class="fas fa-fw fa-briefcase"></i>
+            <span>Laporan Minat Bakat</span></a>
     </li>
 </ul>

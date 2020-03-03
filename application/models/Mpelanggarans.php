@@ -14,6 +14,7 @@ class Mpelanggarans extends CI_Model
     public $id_tatib;
     public $ket_plg;
     public $nip;
+    public $point;
 
     public function getAll()
     {
@@ -45,10 +46,27 @@ class Mpelanggarans extends CI_Model
         $this->id_tatib     = $post['id_tatib'];
         $this->ket_plg      = $post['ket_plg'];
         $this->nip          = $post['nip'];
+        $this->point        = $post['point'];
 
         return $this->db->insert($this->_table, $this); // simpan ke database
         //===================================== $this isi field yang akan di simpan 
     }
+
+
+    public function uPoin()
+    {
+        $post = $this->input->post();
+        $id = $post['nis'];
+        $siswa = $this->db->get_where($this->_tablesiswa, ['nis' => $id])->row();
+        $poin_pelanggaran = $post['point'];
+        $poin_siswa = $siswa->point;
+        $hasil = $poin_siswa - $poin_pelanggaran;
+
+        $this->point = $hasil;
+        return $this->db->query("UPDATE siswa SET point = '$hasil' WHERE nis= '$id'");
+        // return $this->db->update($this->_tablesiswa, $this, array('nis' => $id));
+    }
+
     public function aksi_update()
     {
         $post = $this->input->post(); // ambil data dari form 

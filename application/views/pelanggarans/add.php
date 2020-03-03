@@ -42,16 +42,33 @@
                             </div>
                             <div class="form-group">
                                 <label>Pelanggaran Tata Tertib</label>
-                                <select name="id_tatib" class="form-control">
-                                    <?php foreach ($datatatibs as $datatatib) :
-                                        var_dump($datatatib); ?>
+                                <select name="id_tatib" id="tatib" class="form-control">
+                                    <?php foreach ($datatatibs as $datatatib) : ?>
                                         <option value="<?php echo $datatatib->id_tatib ?>"><?php echo $datatatib->tatib ?></option>
                                     <?php endforeach ?>
                                 </select>
                             </div>
                             <div class="form-group">
+                                <label>Point Pelanggaran</label>
+                                <input readonly id="point" name="point" type="text" class="form-control">
+                            </div>
+                            <script>
+                                function tampil() {
+                                    var data_dipilih = document.getElementById('tatib').selectedIndex;
+                                    var data = <?php echo json_encode($datatatibs); ?>;
+                                    var data_terpilih = data[data_dipilih];
+
+                                    document.getElementById("point").value = data_terpilih.b_poin;
+                                }
+                                document.getElementById("tatib").addEventListener("change", tampil);
+                                tampil();
+                            </script>
+                            <div class="form-group">
                                 <label>Keterangan Pelanggaran</label>
-                                <input name="ket_plg" type="text" class="form-control" placeholder="keterangan">
+                                <select name="ket_plg" class="form-control">
+                                    <option value="Proses">Proses</option>
+                                    <option value="Belum di Proses">Belum di Proses</option>
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label>Guru yang Manangani</label>

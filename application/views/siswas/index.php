@@ -41,6 +41,7 @@
                                         <th>Jenis Kelamin</th>
                                         <th>Alamat</th>
                                         <th>No Hp Orang Tua</th>
+                                        <th>Poin</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
@@ -58,6 +59,7 @@
                                             <td><?php echo $jkel ?></td>
                                             <td><?php echo $datasiswa->alamat ?></td>
                                             <td><?php echo $datasiswa->no_hp_ortu ?></td>
+                                            <td><?php echo $datasiswa->point ?></td>
                                             <td width="120px">
                                                 <a class="btn btn-warning btn-sm" href="<?php echo base_url() ?>siswas/edit/<?php echo $datasiswa->nis ?>">Edit</a>
                                                 <a class="btn btn-danger btn-sm" href="<?php echo base_url() ?>siswas/delete/<?php echo $datasiswa->nis ?>">Hapus</a>

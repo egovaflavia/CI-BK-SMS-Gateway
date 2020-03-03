@@ -24,7 +24,7 @@
                 <div class="card mb-3">
                     <div class="card-header">
                         <i class="fas fa-table"></i>
-                        Data Siswa</div>
+                        Data Guru</div>
                     <div class="card-body">
                         <a href="<?php echo base_url() ?>gurus/add" class="btn btn-primary">Tambah Data</a>
                         <br>

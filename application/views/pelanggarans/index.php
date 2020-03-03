@@ -34,13 +34,13 @@
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>NIS</th>
                                         <th>Nama Siswa</th>
-                                        <th>Tanggal Pelanggaran</th>
+                                        <th>Poin Siswa</th>
                                         <th>Tata Tertib</th>
-                                        <th>Poin</th>
+                                        <th>Poin Pelanggaran</th>
+                                        <th>Tanggal Pelanggaran</th>
                                         <th>Keterangan Pelanggaran</th>
-                                        <th>NIP</th>
+                                        <th>Sanksi</th>
                                         <th>Nama Guru</th>
                                         <th>Aksi</th>
                                         </th>
@@ -52,13 +52,25 @@
                                     ?>
                                         <tr>
                                             <td><?php echo ++$no ?></td>
-                                            <td><?php echo $datapelanggaran->nis ?></td>
                                             <td><?php echo $datapelanggaran->nm_siswa ?></td>
-                                            <td><?php echo $datapelanggaran->tgl_plg ?></td>
+                                            <td><?php echo $datapelanggaran->point ?></td>
                                             <td><?php echo $datapelanggaran->tatib ?></td>
                                             <td><?php echo $datapelanggaran->b_poin ?></td>
+                                            <td><?php echo $datapelanggaran->tgl_plg ?></td>
                                             <td><?php echo $datapelanggaran->ket_plg ?></td>
-                                            <td><?php echo $datapelanggaran->nip ?></td>
+                                            <td>
+                                                <?php if ($datapelanggaran->b_poin >= 5 &&  $datapelanggaran->b_poin <= 5) {
+                                                    echo 'Pemanggilan Siswa';
+                                                } elseif ($datapelanggaran->b_poin >= 31 &&  $datapelanggaran->b_poin <= 60) {
+                                                    echo 'Pemanggilan Orang Tua';
+                                                } elseif ($datapelanggaran->b_poin >= 61 &&  $datapelanggaran->b_poin <= 100) {
+                                                    echo 'Pemanggilan Orang Tua & Skorsing';
+                                                } else {
+                                                    echo 'Di Keluarkan ke Orang Tua';
+                                                }
+
+                                                ?>
+                                            </td>
                                             <td><?php echo $datapelanggaran->nm_guru ?></td>
                                             <td width="120px">
                                                 <a class="btn btn-warning btn-sm" href="<?php echo base_url() ?>pelanggarans/edit/<?php echo $datapelanggaran->id_pelanggaran ?>">Edit</a>

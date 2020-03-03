@@ -22,7 +22,9 @@ class Pelanggarans extends CI_Controller
     public function save()
     {
         $Mpelanggarans = $this->Mpelanggarans;
+        $Mpelanggarans->uPoin();
         $Mpelanggarans->save();
+
         // Add a new item
         redirect('pelanggarans/index', 'refresh');
     }

@@ -23,7 +23,7 @@
                 <?php $this->load->view('_partials/breadcrumbs'); ?>
                 <div class="card mb-3 ">
                     <div class="card-header">
-                        <a href="<?php echo base_url() ?>bimbingans/save"><i class="fas fa-arrow-left"></i> Back</a>
+                        <a href="<?php echo base_url() ?>bimbingans/index"><i class="fas fa-arrow-left"></i> Back</a>
                     </div>
                     <div class="card-body">
                         <?php //var_dump($datagurus) 
@@ -51,7 +51,10 @@
                             </div>
                             <div class="form-group">
                                 <label>Keterangan Bimbingan</label>
-                                <input name="ket_bim" type="text" class="form-control" placeholder="ket_bim">
+                                <select name="ket_bim" class="form-control">
+                                    <option value="Proses">Proses</option>
+                                    <option value="Belum di Proses">Belum di Proses</option>
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label>Guru yang Menangani</label>
