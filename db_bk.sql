@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 03 Mar 2020 pada 12.07
+-- Generation Time: 04 Mar 2020 pada 11.49
 -- Versi Server: 5.6.37
 -- PHP Version: 5.6.31
 
@@ -34,14 +34,15 @@ CREATE TABLE IF NOT EXISTS `bimbingan_siswa` (
   `penyelesaian` varchar(100) NOT NULL,
   `ket_bim` varchar(20) NOT NULL,
   `nip` int(20) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `bimbingan_siswa`
 --
 
 INSERT INTO `bimbingan_siswa` (`id_bimbingan`, `nis`, `tg_bim`, `permasalahan`, `penyelesaian`, `ket_bim`, `nip`) VALUES
-(5, 13, '2020-02-26', 'Curhat', 'Pulang', 'Proses', 12);
+(1, 3386, '2020-03-04', 'Putus', 'Nyambung', 'Belum di Proses', 2147483647),
+(2, 3406, '2020-03-02', 'Masalah Keluarga', 'Pemanggilan Orangtua', 'Belum di Proses', 2147483647);
 
 -- --------------------------------------------------------
 
@@ -60,7 +61,7 @@ CREATE TABLE IF NOT EXISTS `guru` (
 --
 
 INSERT INTO `guru` (`nip`, `nm_guru`, `jabatan`) VALUES
-(40, 'Laudantium nihil mo', 'Qui eaque minus enim');
+(2147483647, 'Ardison Ismail, S.Pd', 'Kepala Sekolah');
 
 -- --------------------------------------------------------
 
@@ -76,14 +77,14 @@ CREATE TABLE IF NOT EXISTS `minat_bakat` (
   `bakat` varchar(100) NOT NULL,
   `ket_mb` varchar(10) NOT NULL,
   `nip` int(20) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `minat_bakat`
 --
 
 INSERT INTO `minat_bakat` (`id_mb`, `nis`, `tgl_mb`, `minat`, `bakat`, `ket_mb`, `nip`) VALUES
-(1, 13, '1971-01-04', 'At magnam consectetu', 'Excepturi sed qui qu', 'Itaque ali', 40);
+(2, 3386, '2020-03-02', 'Olahraga', 'Seni', 'Belum di P', 2147483647);
 
 -- --------------------------------------------------------
 
@@ -99,15 +100,14 @@ CREATE TABLE IF NOT EXISTS `pelanggaran_siswa` (
   `ket_plg` varchar(50) NOT NULL,
   `nip` int(20) NOT NULL,
   `point` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `pelanggaran_siswa`
 --
 
 INSERT INTO `pelanggaran_siswa` (`id_pelanggaran`, `nis`, `tgl_plg`, `id_tatib`, `ket_plg`, `nip`, `point`) VALUES
-(9, 13, '1991-11-21', 1, 'Belum di Proses', 40, 5),
-(10, 13, '2006-05-20', 2, 'Belum di Proses', 40, 60);
+(1, 3405, '2020-03-02', 1, 'Proses', 2147483647, 5);
 
 -- --------------------------------------------------------
 
@@ -122,7 +122,7 @@ CREATE TABLE IF NOT EXISTS `siswa` (
   `kelas` varchar(10) NOT NULL,
   `jekel` varchar(2) NOT NULL,
   `alamat` varchar(50) NOT NULL,
-  `no_hp_ortu` int(12) NOT NULL,
+  `no_hp_ortu` varchar(20) NOT NULL,
   `point` int(11) NOT NULL DEFAULT '100'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -131,12 +131,16 @@ CREATE TABLE IF NOT EXISTS `siswa` (
 --
 
 INSERT INTO `siswa` (`nis`, `ta`, `nm_siswa`, `kelas`, `jekel`, `alamat`, `no_hp_ortu`, `point`) VALUES
-(13, 'Rerum et n', 'Repellendus Dolore ', 'Sunt moles', 'Co', 'Unde totam consequat', 94, 5),
-(55, 'Qui eum vo', 'Aute voluptatem min', 'Dolore off', 'Es', 'Voluptatem ad ad dol', 95, 70),
-(63, 'Cumque vel', 'Consequuntur digniss', 'Voluptas o', 'Ve', 'Accusantium voluptat', 32, 90),
-(67, 'Dolorem au', 'Sint nihil a minima', 'Occaecat s', 'No', 'Necessitatibus magni', 21, 100),
-(87, 'Est pariat', 'Eum id optio assume', 'Culpa volu', 'Ve', 'Sunt perspiciatis ', 12, 100),
-(1123, '2020', 'Egova', '5', 'L', 'Padang', 819629431, 100);
+(3386, '2019/2020', 'Apit Syaifa', 'VIII.1', 'L', 'Pariangan', '2147483647', 95),
+(3387, '2019/2020', 'Aurel Titania', 'IX', 'P', 'Sikaladi', '2147483647', 95),
+(3405, '2019/2020', 'Rizky Boy', 'VIII.2', 'L', 'Guguk', '2147483647', 95),
+(3406, '2019/2020', 'Roy Imanda', 'IX', 'L', 'Sikaladi', '2147483647', 100),
+(3411, '2019/2020', 'Yulia Anisa', 'IX', 'P', 'Sikaladi', '2147483647', 70),
+(3416, '2019/2020', 'Ade Latifah Hanum', 'VIII.2', 'P', 'Sikaladi', '2147483647', 100),
+(3421, '2019/2020', 'Aza Khairunnisa', 'VIII.2', 'P', 'Pariangan', '2147483647', 100),
+(3450, '2019/2020', 'Refiqra Dwi Akila', 'VIII.1', 'P', 'Sikaladi', '2147483647', 100),
+(3465, '2019/2020', 'Cici Puspita Jp Gulo', 'VII', 'P', 'Sikaladi', '2147483647', 100),
+(3477, '2019/2020', 'Zahratul Aini', 'VII', 'P', 'Sikaladi', '2147483647', 100);
 
 -- --------------------------------------------------------
 
@@ -148,7 +152,7 @@ CREATE TABLE IF NOT EXISTS `tatatertib` (
   `id_tatib` int(5) NOT NULL,
   `tatib` varchar(100) NOT NULL,
   `b_poin` int(30) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `tatatertib`
@@ -156,7 +160,32 @@ CREATE TABLE IF NOT EXISTS `tatatertib` (
 
 INSERT INTO `tatatertib` (`id_tatib`, `tatib`, `b_poin`) VALUES
 (1, 'Terlambat masuk sekolah 15 menit setelah bel berbunyi', 5),
-(2, 'Tidak mengikuti upcara bendera', 60);
+(2, 'Tidak mengikuti upcara bendera', 5),
+(3, 'Izin keluar selama PBM berlangsung dan tidak kembali ke kelas', 5),
+(4, 'Tidak masuk sekolah tanpa keterangan', 10),
+(5, 'Meninggalkan kelas hingga PBM selesai', 30),
+(6, 'Tidak masuk sekolah dengan memberikan keterangan palsu', 10),
+(7, 'Tidak memakai atribut (topi dan dasi) saat upacara bendera', 5),
+(8, 'Memakai pakaian seragam sekolah terlalu ketat', 20),
+(9, 'Memakai pakaian seragam sekolah tidak rapi', 10),
+(10, 'Mengeluarkan kata-kata tidak sopan kepada guru', 50),
+(11, 'Berbuat asusila di lingkungan sekolah', 75),
+(12, 'Mencuri peralatan sekolah', 50),
+(13, 'Mencuri barang milik teman/siswa lain', 30),
+(14, 'Membawa HP ke sekolah kecuali dalam keadaan tertentu', 20),
+(15, 'Memainkan HP saat PBM berlangsung', 30),
+(16, 'Keluar kelas tanpa izin guru', 10),
+(17, 'Keluar lingkungan sekolah tanpa izin guru piket', 20),
+(18, 'Mengotori atau mencoret-coret fasilitas sekolah', 20),
+(19, 'Merusak fasilitas sekolah', 30),
+(20, 'Membawa rokok ke dalam lingkungan sekolah', 25),
+(21, 'Merokok di lingkungan sekolah', 30),
+(22, 'Membawa buku, majalah porno dan lainnya kedalam lingkungan sekolah', 50),
+(23, 'Melihat foto dan atau menonton video porno dan lainnya di lingkungan sekolah', 75),
+(24, 'Membawa senjata tajam ke dalam lingkungan sekolah', 80),
+(25, 'Membawa senjata tajam dengan sengaja untuk melukai seseorang', 100),
+(26, 'Mabuk di dalam kelas dan lingkungan sekolah', 100),
+(27, 'Membawa dan menggunakan obat-obatan terlarang dan minuman keras ke lingkungan sekolah', 100);
 
 -- --------------------------------------------------------
 
@@ -170,15 +199,16 @@ CREATE TABLE IF NOT EXISTS `users` (
   `password` varchar(20) NOT NULL,
   `nama` varchar(20) NOT NULL,
   `jabatan` varchar(20) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `users`
 --
 
 INSERT INTO `users` (`id_user`, `username`, `password`, `nama`, `jabatan`) VALUES
-(0, 'qaderada', 'Quasi sequi deserunt', 'Voluptatibus dolores', 'At vel voluptate tem'),
-(4, 'admin', 'admin', 'admin', 'admin');
+(1, 'ardisonismail', 'ardison123', 'Ardison Ismail, S.Pd', 'Kepala Sekolah'),
+(2, 'windaoctriana', 'winda123', 'Winda Octriana, S.Pd', 'Guru'),
+(3, 'admin', 'admin', 'Roy Imanda', 'Siswa');
 
 --
 -- Indexes for dumped tables
@@ -234,27 +264,27 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `bimbingan_siswa`
 --
 ALTER TABLE `bimbingan_siswa`
-  MODIFY `id_bimbingan` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+  MODIFY `id_bimbingan` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `minat_bakat`
 --
 ALTER TABLE `minat_bakat`
-  MODIFY `id_mb` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `id_mb` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `pelanggaran_siswa`
 --
 ALTER TABLE `pelanggaran_siswa`
-  MODIFY `id_pelanggaran` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+  MODIFY `id_pelanggaran` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `tatatertib`
 --
 ALTER TABLE `tatatertib`
-  MODIFY `id_tatib` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+  MODIFY `id_tatib` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=28;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

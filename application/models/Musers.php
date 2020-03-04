@@ -51,6 +51,33 @@ class Musers extends CI_Model
     {
         return $this->db->get_where($this->_table, ['id_user' => $id])->row();
     }
+    public function doLogin()
+    {
+        $post = $this->input->post();
+        // cari user berdasakan email dan username
+        $this->db->where('username', $post["username"]);
+
+        $user = $this->db->get($this->_table)->row();
+
+        // jika user terdaftar
+        if ($user) {
+            // periksa password nya
+            $isPasswordTrue = $post["password"] ==  $user->password;
+            // jika password benar dan dia admin
+            if ($isPasswordTrue) {
+                // login sukses yay
+                $this->session->set_userdata(['user_logged' => $user]);
+                return true;
+            }
+        }
+        // jika login gagal
+        return false;
+    }
+
+    public function isNotLogin()
+    {
+        return $this->session->userdata('user_logged') === null;
+    }
 }
 
 /* End of file Musers.php */
