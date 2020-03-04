@@ -1,6 +1,6 @@
 <ul class="sidebar navbar-nav">
     <li class="nav-item active">
-        <a class="nav-link" href="<?php echo base_url() ?>admin">
+        <a class="nav-link" href="<?php echo base_url() ?>">
             <i class="fas fa-fw fa-home"></i>
             <span>Home</span>
         </a>
@@ -46,23 +46,24 @@
             <span>SMS Gateway</span></a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url() ?>laporan/siswa">
+        <a target="_blank" class="nav-link" href="<?php echo base_url() ?>laporan/siswa">
             <i class="fas fa-fw fa-briefcase"></i>
             <span>Laporan Siswa</span></a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url() ?>tatibs">
+        <a target="_blank" class="nav-link" href="<?php echo base_url() ?>laporan/bimbingan">
             <i class="fas fa-fw fa-briefcase"></i>
             <span>Laporan Bimbingan</span></a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url() ?>tatibs">
+        <a target="_blank" class="nav-link" href="<?php echo base_url() ?>laporan/pelanggaran">
             <i class="fas fa-fw fa-briefcase"></i>
             <span>Laporan Pelanggaran</span></a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url() ?>tatibs">
+        <a target="_blank" class="nav-link" href="<?php echo base_url() ?>laporan/minatbakat">
             <i class="fas fa-fw fa-briefcase"></i>
-            <span>Laporan Minat Bakat</span></a>
+            <span>Laporan Minat Bakat</span>
+        </a>
     </li>
 </ul>

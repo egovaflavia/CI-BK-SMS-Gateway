@@ -50,7 +50,10 @@
                             </div>
                             <div class="form-group">
                                 <label>Keterangan Minat Bakat</label>
-                                <input name="ket_mb" type="text" class="form-control" placeholder="keterangan">
+                                <select name="ket_mb" class="form-control">
+                                    <option value="Proses">Proses</option>
+                                    <option value="Belum di Proses">Belum di Proses</option>
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label>Guru</label>

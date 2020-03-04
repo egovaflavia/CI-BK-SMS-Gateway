@@ -50,7 +50,7 @@
         <br>
         <hr>
         <h4>
-            <center>Laporan Seluruh Siswa <br> UPT SMP Negeri 2 Pariangan</center>
+            <center>Laporan Bimbingan Siswa <br> UPT SMP Negeri 2 Pariangan</center>
         </h4>
 
         <br>
@@ -60,30 +60,26 @@
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>NIS</th>
                         <th>Nama</th>
                         <th>Kelas</th>
-                        <th>Jenis Kelamin</th>
-                        <th>Alamat</th>
-                        <th>No Hp Orang Tua</th>
-                        <th>Poin</th>
+                        <th>Hari/Tanggal</th>
+                        <th>Permasalhan</th>
+                        <th>Penyelesaian</th>
+                        <th>Keterangan</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($datasiswas as $no => $datasiswa) :
-                        // var_dump($datasiswa);
-                        $jkel = $datasiswa->jekel == "L" ? "Laki-Laki" : "Perempuan";
+                    <?php foreach ($databimbingans as $no => $databimbingan) :
+                        // var_dump($databimbingan);
                     ?>
                         <tr>
                             <td><?php echo ++$no ?></td>
-                            <td><?php echo $datasiswa->nis ?></td>
-                            <td><?php echo $datasiswa->ta ?></td>
-                            <td><?php echo $datasiswa->nm_siswa ?></td>
-                            <td><?php echo $datasiswa->kelas ?></td>
-                            <td><?php echo $jkel ?></td>
-                            <td><?php echo $datasiswa->alamat ?></td>
-                            <td><?php echo $datasiswa->no_hp_ortu ?></td>
-                            <td><?php echo $datasiswa->point ?></td>
+                            <td><?php echo $databimbingan->nis ?></td>
+                            <td><?php echo $databimbingan->kelas ?></td>
+                            <td><?php echo $databimbingan->tg_bim ?></td>
+                            <td><?php echo $databimbingan->permasalahan ?></td>
+                            <td><?php echo $databimbingan->penyelesaian ?></td>
+                            <td><?php echo $databimbingan->ket_bim ?></td>
                         </tr>
                     <?php endforeach ?>
                 </tbody>

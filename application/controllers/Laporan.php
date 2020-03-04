@@ -10,6 +10,9 @@ class Laporan extends CI_Controller
         parent::__construct();
         //Load Dependencies
         $this->load->model('Msiswas');
+        $this->load->model('Mbimbingans');
+        $this->load->model('Mpelanggarans');
+        $this->load->model('Mminatbakats');
         $this->load->library("form_validation");
     }
 
@@ -18,6 +21,31 @@ class Laporan extends CI_Controller
     {
         $data['datasiswas'] = $this->Msiswas->getAll();
         $this->load->view('laporan/siswa', $data);
+    }
+
+    public function bimbingan($offset = 0)
+    {
+        $data['databimbingans'] = $this->Mbimbingans->getAll();
+        // var_dump($data['datasiswas']);
+        // exit;
+        // $data['databimbingans'] = $this->Mbimbingans->getAll();
+        $this->load->view('laporan/bimbingan', $data);
+    }
+    public function pelanggaran($offset = 0)
+    {
+        $data['datapelanggarans'] = $this->Mpelanggarans->getAll();
+        // var_dump($data['datasiswas']);
+        // exit;
+        // $data['databimbingans'] = $this->Mbimbingans->getAll();
+        $this->load->view('laporan/pelanggaran', $data);
+    }
+    public function minatbakat($offset = 0)
+    {
+        $data['dataminatbakats'] = $this->Mminatbakats->getAll();
+        // var_dump($data['datasiswas']);
+        // exit;
+        // $data['databimbingans'] = $this->Mbimbingans->getAll();
+        $this->load->view('laporan/minatbakat', $data);
     }
 }
 /* End of file Controllername.php */

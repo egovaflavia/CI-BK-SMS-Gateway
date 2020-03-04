@@ -50,7 +50,7 @@
         <br>
         <hr>
         <h4>
-            <center>Laporan Seluruh Siswa <br> UPT SMP Negeri 2 Pariangan</center>
+            <center>Laporan Pelanggaran Siswa <br> UPT SMP Negeri 2 Pariangan</center>
         </h4>
 
         <br>
@@ -60,30 +60,26 @@
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>NIS</th>
                         <th>Nama</th>
                         <th>Kelas</th>
-                        <th>Jenis Kelamin</th>
-                        <th>Alamat</th>
-                        <th>No Hp Orang Tua</th>
+                        <th>Hari/Tanggal</th>
+                        <th>Pelanggaran</th>
                         <th>Poin</th>
+                        <th>Keterangan</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($datasiswas as $no => $datasiswa) :
-                        // var_dump($datasiswa);
-                        $jkel = $datasiswa->jekel == "L" ? "Laki-Laki" : "Perempuan";
+                    <?php foreach ($datapelanggarans as $no => $datapelanggaran) :
+                        // var_dump($datapelanggaran);
                     ?>
                         <tr>
                             <td><?php echo ++$no ?></td>
-                            <td><?php echo $datasiswa->nis ?></td>
-                            <td><?php echo $datasiswa->ta ?></td>
-                            <td><?php echo $datasiswa->nm_siswa ?></td>
-                            <td><?php echo $datasiswa->kelas ?></td>
-                            <td><?php echo $jkel ?></td>
-                            <td><?php echo $datasiswa->alamat ?></td>
-                            <td><?php echo $datasiswa->no_hp_ortu ?></td>
-                            <td><?php echo $datasiswa->point ?></td>
+                            <td><?php echo $datapelanggaran->nis ?></td>
+                            <td><?php echo $datapelanggaran->kelas ?></td>
+                            <td><?php echo $datapelanggaran->tgl_plg ?></td>
+                            <td><?php echo $datapelanggaran->tatib ?></td>
+                            <td><?php echo $datapelanggaran->point ?></td>
+                            <td><?php echo $datapelanggaran->ket_plg ?></td>
                         </tr>
                     <?php endforeach ?>
                 </tbody>

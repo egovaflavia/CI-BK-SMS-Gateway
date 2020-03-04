@@ -47,7 +47,10 @@
                             </div>
                             <div class="form-group">
                                 <label>Keterangan Minat Bakat</label>
-                                <input value="<?php echo $dataminatbakat->ket_mb ?>" name="ket_mb" type="text" class="form-control" placeholder="keterangan">
+                                <select name="ket_mb" class="form-control">
+                                    <option value="Proses">Proses</option>
+                                    <option value="Belum di Proses">Belum di Proses</option>
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label>NIP</label>

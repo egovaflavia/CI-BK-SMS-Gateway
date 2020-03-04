@@ -25,7 +25,8 @@
                     <div class="card-header">
                         <a href="<?php echo base_url() ?>pelanggarans/index"><i class="fas fa-arrow-left"></i> Back</a>
                     </div>
-                    <?php var_dump($datasiswas) ?>
+                    <?php //var_dump($datasiswas) 
+                    ?>
                     <div class="card-body">
                         <form action="<?php echo base_url() ?>pelanggarans/update" method="post" enctype="multipart/form-data">
                             <div class="form-group">
@@ -45,7 +46,10 @@
                             </div>
                             <div class="form-group">
                                 <label>Keterangan Pelanggaran</label>
-                                <input value="<?php echo $datapelanggaran->ket_plg ?> " name=" ket_plg" type="text" class="form-control" placeholder="keterangan">
+                                <select name="ket_plg" class="form-control">
+                                    <option value="Proses">Proses</option>
+                                    <option value="Belum di Proses">Belum di Proses</option>
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label>NIP</label>

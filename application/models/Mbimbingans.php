@@ -17,7 +17,6 @@ class Mbimbingans extends CI_Model
 
     public function getAll()
     {
-
         $this->db->select('*');
         $this->db->from($this->_table);
         $this->db->join($this->_tablesiswa, 'bimbingan_siswa.nis = siswa.nis');
