@@ -77,7 +77,6 @@
                         <tr>
                             <td><?php echo ++$no ?></td>
                             <td><?php echo $datasiswa->nis ?></td>
-                            <td><?php echo $datasiswa->ta ?></td>
                             <td><?php echo $datasiswa->nm_siswa ?></td>
                             <td><?php echo $datasiswa->kelas ?></td>
                             <td><?php echo $jkel ?></td>
