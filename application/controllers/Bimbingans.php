@@ -20,6 +20,12 @@ class Bimbingans extends CI_Controller
         $this->load->view('bimbingans/index', $data);
     }
 
+    public function persiswa()
+    {
+        $data['databimbingans'] = $this->Mbimbingans->getAllPerSiswa();
+        $this->load->view('bimbingans/persiswa', $data);
+    }
+
     // Add a new item
     public function save()
     {

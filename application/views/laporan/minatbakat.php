@@ -50,7 +50,11 @@
         <br>
         <hr>
         <h4>
-            <center>Laporan Bimbingan Siswa <br> UPT SMP Negeri 2 Pariangan</center>
+            <center>Laporan Bimbingan Siswa <br> UPT SMP Negeri 2 Pariangan <br>
+                <?php
+                echo $tes = $dataminatbakats[0]->ta;
+                ?>
+            </center>
         </h4>
 
         <br>

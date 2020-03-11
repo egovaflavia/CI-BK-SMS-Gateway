@@ -16,6 +16,12 @@ class Laporan extends CI_Controller
         $this->load->library("form_validation");
     }
 
+    public function index($offset = 0)
+    {
+        $this->load->view('laporan/index');
+    }
+
+
     // List all your items
     public function siswa($offset = 0)
     {

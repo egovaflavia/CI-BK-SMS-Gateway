@@ -15,7 +15,9 @@
             </div>
             <div class="col-md-6">
                 <center>
-                    <h4>UNIT PELAYANAN BIMBINGAN KONSELING<br> UPT SMP NEGERI 2 PARIANGAN</h4>
+                    <h4>UNIT PELAYANAN BIMBINGAN KONSELING<br> UPT SMP NEGERI 2 PARIANGAN <br>
+                    </h4>
+
                 </center>
             </div>
             <div class="col-md-3">
@@ -50,7 +52,12 @@
         <br>
         <hr>
         <h4>
-            <center>Laporan Pelanggaran Siswa <br> UPT SMP Negeri 2 Pariangan</center>
+            <center>
+                Laporan Pelanggaran Siswa <br> UPT SMP Negeri 2 Pariangan <br>
+                <?php
+                echo $tes = $datapelanggarans[0]->ta;
+                ?>
+            </center>
         </h4>
 
         <br>
@@ -65,6 +72,7 @@
                         <th>Hari/Tanggal</th>
                         <th>Pelanggaran</th>
                         <th>Poin</th>
+                        <th>Sanksi</th>
                         <th>Keterangan</th>
                     </tr>
                 </thead>
@@ -79,6 +87,18 @@
                             <td><?php echo $datapelanggaran->tgl_plg ?></td>
                             <td><?php echo $datapelanggaran->tatib ?></td>
                             <td><?php echo $datapelanggaran->point ?></td>
+                            <td>
+                                <?php if ($datapelanggaran->point >= 5 &&  $datapelanggaran->point <= 5) {
+                                    echo 'Pemanggilan Siswa';
+                                } elseif ($datapelanggaran->point >= 31 &&  $datapelanggaran->point <= 60) {
+                                    echo 'Pemanggilan Orang Tua';
+                                } elseif ($datapelanggaran->point >= 61 &&  $datapelanggaran->point <= 100) {
+                                    echo 'Pemanggilan Orang Tua & Skorsing';
+                                } else {
+                                    echo 'Di Keluarkan ke Orang Tua';
+                                }
+                                ?>
+                            </td>
                             <td><?php echo $datapelanggaran->ket_plg ?></td>
                         </tr>
                     <?php endforeach ?>

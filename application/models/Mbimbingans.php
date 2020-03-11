@@ -20,7 +20,7 @@ class Mbimbingans extends CI_Model
         $this->db->select('*');
         $this->db->from($this->_table);
         $this->db->join($this->_tablesiswa, 'bimbingan_siswa.nis = siswa.nis');
-        $this->db->join($this->_tableguru, 'guru.nip = guru.nip');
+        $this->db->join($this->_tableguru, 'bimbingan_siswa.nip = guru.nip');
         return $this->db->get()->result();
     }
 
@@ -28,6 +28,16 @@ class Mbimbingans extends CI_Model
     {
         return $this->db->get($this->_tablesiswa)->result();
     }
+    public function getAllPerSiswa()
+    {
+        // var_dump($this->session->userdata('user_logged')->username);
+        // exit;
+        $this->db->select('*');
+        $this->db->from($this->_table);
+        $this->db->where('nis', $this->session->userdata('user_logged')->username);
+        return $this->db->get()->result();
+    }
+
     public function getAllGuru()
     {
         return $this->db->get($this->_tableguru)->result();

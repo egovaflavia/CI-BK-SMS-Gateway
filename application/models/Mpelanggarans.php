@@ -16,13 +16,47 @@ class Mpelanggarans extends CI_Model
     public $nip;
     public $point;
 
+    public function SMS()
+    {
+        $array_fields['phone_number'] = $_POST['nohp']; // set nohp
+        $array_fields['message'] = $_POST['pesan']; // set pesan
+        $array_fields['device_id'] = 116051; // set device id. cek di dashboard web smsgateway.me
+
+
+        // token didapat dari smsgateway.me
+        $token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhZG1pbiIsImlhdCI6MTU4Mzg5NTc0OCwiZXhwIjo0MTAyNDQ0ODAwLCJ1aWQiOjc4MjkyLCJyb2xlcyI6WyJST0xFX1VTRVIiXX0.zgqD0Xm4ceTuPyYyr59VsoMofPjBPMC7qJjPERJNaoM";
+
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => "https://smsgateway.me/api/v4/message/send",
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 30,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "POST",
+            CURLOPT_POSTFIELDS => "[  " . json_encode($array_fields) . "]",
+            CURLOPT_HTTPHEADER => array(
+                "authorization: $token",
+                "cache-control: no-cache"
+            ),
+        ));
+        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+
+        $response = curl_exec($curl);
+        $err = curl_error($curl);
+
+        curl_close($curl);
+    }
+
     public function getAll()
     {
         $this->db->select('*');
         $this->db->from($this->_table);
         $this->db->join($this->_tablesiswa, 'pelanggaran_siswa.nis = siswa.nis');
         $this->db->join($this->_tabletatib, 'tatatertib.id_tatib = pelanggaran_siswa.id_tatib');
-        $this->db->join($this->_tableguru, 'guru.nip = guru.nip');
+        $this->db->join($this->_tableguru, 'pelanggaran_siswa.nip = guru.nip');
         return $this->db->get()->result();
         return $this->db->get($this->_table)->result();
     }

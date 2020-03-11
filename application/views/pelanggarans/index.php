@@ -68,7 +68,6 @@
                                                 } else {
                                                     echo 'Di Keluarkan ke Orang Tua';
                                                 }
-
                                                 ?>
                                             </td>
                                             <td><?php echo $datapelanggaran->nm_guru ?></td>

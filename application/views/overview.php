@@ -18,7 +18,8 @@
     <div id="content-wrapper">
 
       <div class="container-fluid">
-        <?php var_dump($_SESSION['user_logged']) ?>
+        <?php // var_dump($_SESSION['user_logged']) 
+        ?>
         <!-- Breadcrumbs-->
         <?php // $this->load->view('_partials/breadcrumbs'); 
         ?>

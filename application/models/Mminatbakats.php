@@ -20,7 +20,7 @@ class Mminatbakats extends CI_Model
         $this->db->select('*');
         $this->db->from($this->_table);
         $this->db->join($this->_tablesiswa, 'minat_bakat.nis = siswa.nis');
-        $this->db->join($this->_tableguru, 'guru.nip = guru.nip');
+        $this->db->join($this->_tableguru, 'minat_bakat.nip = guru.nip');
         return $this->db->get()->result();
         return $this->db->get($this->_table)->result();
     }
