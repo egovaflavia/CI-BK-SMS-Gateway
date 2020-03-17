@@ -30,12 +30,8 @@ class Mbimbingans extends CI_Model
     }
     public function getAllPerSiswa()
     {
-        // var_dump($this->session->userdata('user_logged')->username);
-        // exit;
-        $this->db->select('*');
-        $this->db->from($this->_table);
-        $this->db->where('nis', $this->session->userdata('user_logged')->username);
-        return $this->db->get()->result();
+        $nis = $this->session->userdata('user_logged')->username;
+        return $this->db->get_where($this->_table, array('nis' => $nis))->result();
     }
 
     public function getAllGuru()

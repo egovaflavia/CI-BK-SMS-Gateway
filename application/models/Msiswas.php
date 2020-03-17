@@ -12,21 +12,35 @@ class Msiswas extends CI_Model
     public $jekel;
     public $alamat;
     public $no_hp_ortu;
+    // public $username;
+    // public $password;
+    // public $nama;
+    // public $jabatan;
 
     public function getAll()
     {
         return $this->db->get($this->_table)->result();
     }
 
+    public function saveuser()
+    {
+        $post       = $this->input->post();  // ambil data dari form 
+        $data['username'] = $post['nis'];
+        $data['password'] = uniqid();
+        $data['nama']     = $post['nama'];
+        $data['jabatan']  = 'Siswa';
+        return $this->db->insert('users', $data);
+    }
+
     public function save()
     {
-        $post = $this->input->post(); // ambil data dari form 
-        $this->nis = $post['nis'];
-        $this->ta = $post['ta'];
-        $this->nm_siswa = $post['nama'];
-        $this->kelas = $post['kelas'];
-        $this->jekel = $post['jekel'];
-        $this->alamat = $post['alamat'];
+        $post             = $this->input->post();  // ambil data dari form 
+        $this->nis        = $post['nis'];
+        $this->ta         = $post['ta'];
+        $this->nm_siswa   = $post['nama'];
+        $this->kelas      = $post['kelas'];
+        $this->jekel      = $post['jekel'];
+        $this->alamat     = $post['alamat'];
         $this->no_hp_ortu = $post['no_hp'];
 
         return $this->db->insert($this->_table, $this); // simpan ke database

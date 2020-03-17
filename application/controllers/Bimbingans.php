@@ -23,6 +23,8 @@ class Bimbingans extends CI_Controller
     public function persiswa()
     {
         $data['databimbingans'] = $this->Mbimbingans->getAllPerSiswa();
+        var_dump($data['databimbingans']);
+        exit;
         $this->load->view('bimbingans/persiswa', $data);
     }
 

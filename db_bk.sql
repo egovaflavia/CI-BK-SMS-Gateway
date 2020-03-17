@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 11 Mar 2020 pada 11.43
+-- Generation Time: 17 Mar 2020 pada 21.28
 -- Versi Server: 5.6.37
 -- PHP Version: 5.6.31
 
@@ -34,20 +34,15 @@ CREATE TABLE IF NOT EXISTS `bimbingan_siswa` (
   `penyelesaian` varchar(100) NOT NULL,
   `ket_bim` varchar(20) NOT NULL,
   `nip` int(20) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `bimbingan_siswa`
 --
 
 INSERT INTO `bimbingan_siswa` (`id_bimbingan`, `nis`, `tg_bim`, `permasalahan`, `penyelesaian`, `ket_bim`, `nip`) VALUES
-(2, 3406, '2020-03-02', 'Permasalahan dengan teman', 'Pemanggilan Orangtua', 'Belum di Proses', 1234567890),
-(3, 3469, '2019-07-25', 'Masalah Keluarga', 'Diberikan nasihat/arahan', 'Proses', 2147483647),
-(4, 3459, '2019-07-26', 'Masalah Keluarga', 'Diberikan nasihat/arahan', 'Proses', 2147483647),
-(5, 3450, '2019-07-26', 'Masalah Keluarga', 'Diberikan solusi', 'Proses', 2147483647),
-(6, 3477, '2019-07-29', 'Masalah Keluarga', 'Diarahkan dan disuksi dengan orangtua', 'Proses', 2147483647),
-(7, 3421, '2019-08-01', 'Permasalahan dengan teman', 'Diberikan nasihat/arahan', 'Proses', 2147483647),
-(8, 3450, '2019-08-05', 'sering terlambat ke sekolah', 'Dibicarakan dengan orangtua', 'Proses', 2147483647);
+(9, 1308, '2020-03-18', 'Pacaran', 'Putus', 'Belum di Proses', 2147483647),
+(10, 1308, '2020-03-18', 'Galau', 'Tidak ada', 'Belum di Proses', 2147483647);
 
 -- --------------------------------------------------------
 
@@ -153,21 +148,7 @@ CREATE TABLE IF NOT EXISTS `siswa` (
 --
 
 INSERT INTO `siswa` (`nis`, `ta`, `nm_siswa`, `kelas`, `jekel`, `alamat`, `no_hp_ortu`, `point`) VALUES
-(3386, '2019/2020', 'Apit Syaifa', 'VIII.1', 'L', 'Pariangan', '2147483647', -85),
-(3387, '2019/2020', 'Aurel Titania', 'IX', 'P', 'Sikaladi', '2147483647', 90),
-(3405, '2019/2020', 'Rizky Boy', 'VIII.2', 'L', 'Guguk', '2147483647', 85),
-(3406, '2019/2020', 'Roy Imanda', 'IX', 'L', 'Sikaladi', '2147483647', 45),
-(3407, '2019/2020', 'Tia Anggraini', 'IX', 'P', 'Sikaladi', '0856713', 0),
-(3411, '2019/2020', 'Yulia Anisa', 'IX', 'P', 'Sikaladi', '2147483647', 10),
-(3416, '2019/2020', 'Ade Latifah Hanum', 'VIII.2', 'P', 'Sikaladi', '2147483647', 80),
-(3421, '2019/2020', 'Aza Khairunnisa', 'VIII.2', 'P', 'Pariangan', '2147483647', 100),
-(3450, '2019/2020', 'Refiqra Dwi Akila', 'VIII.1', 'P', 'Sikaladi', '2147483647', 90),
-(3458, '2019/2020', 'Yoga Pratama', 'VIII.1', 'L', 'Sikaladi', '0813245', 95),
-(3459, '2019/2020', 'Zahara Sakinah', 'VIII.1', 'P', 'Sikaladi', '081234', 25),
-(3461, '2019/2020', 'Adetia Warman', 'VII', 'L', 'Sikaladi', '0814476547', 70),
-(3465, '2019/2020', 'Cici Puspita Jp Gulo', 'VII', 'P', 'Sikaladi', '2147483647', 100),
-(3469, '2019/2020', 'Hidayat Nur Wahid', 'VII', 'L', 'Sikaladi', '0981222748', 100),
-(3477, '2019/2020', 'Zahratul Aini', 'VII', 'P', 'Sikaladi', '2147483647', 95);
+(1308, '2019/2020', 'Egova Riva Gustino', 'XII', 'La', 'Padang', '0819629431', 100);
 
 -- --------------------------------------------------------
 
@@ -226,7 +207,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `password` varchar(20) NOT NULL,
   `nama` varchar(20) NOT NULL,
   `jabatan` varchar(20) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `users`
@@ -234,20 +215,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`id_user`, `username`, `password`, `nama`, `jabatan`) VALUES
 (1, 'admin', 'admin', 'Winda Octriana, S.Pd', 'Guru BK'),
-(2, 'ardison', 'ardison123', 'Ardison Ismail, S.Pd', 'Kepala Sekolah'),
-(3, 'winda', 'winda123', 'Winda Octriana, S.Pd', 'Guru BK'),
-(4, '3386', 'apit123', 'Apit Syaifa', 'Siswa'),
-(5, '3405', 'rizky123', 'Rizky Boy', 'Siswa'),
-(6, '3387', 'aurel123', 'Aurel Titania', 'Siswa'),
-(7, '3406', 'roy123', 'Roy Imanda', 'Siswa'),
-(8, '3416', 'ade123', 'Ade Latifah Hanum', 'Siswa'),
-(9, '3421', 'aza123', 'Aza Khairunnisa', 'Siswa'),
-(10, '3450', 'refiqra123', 'Refiqra Dwi Akila', 'Siswa'),
-(11, '3457', 'yizi123', 'Yizi Aprilia', 'Siswa'),
-(12, '3411', 'yulia123', 'Yulia Anisa', 'Siswa'),
-(13, '3465', 'cici123', 'Cici Puspita Jp Gulo', 'Siswa'),
-(14, '3461', 'adetia123', 'Adetia Warman', 'Siswa'),
-(15, '3410', 'wulan123', 'Wulan Ramadhani', 'Siswa');
+(16, '1308', '5e713a0b6e3e1', 'Egova Riva Gustino', 'Siswa');
 
 --
 -- Indexes for dumped tables
@@ -303,7 +271,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `bimbingan_siswa`
 --
 ALTER TABLE `bimbingan_siswa`
-  MODIFY `id_bimbingan` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
+  MODIFY `id_bimbingan` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `minat_bakat`
 --
@@ -323,7 +291,7 @@ ALTER TABLE `tatatertib`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

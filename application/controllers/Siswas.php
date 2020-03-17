@@ -10,6 +10,7 @@ class Siswas extends CI_Controller
         parent::__construct();
         //Load Dependencies
         $this->load->model('Msiswas');
+        $this->load->model('Musers');
         $this->load->library("form_validation");
     }
 
@@ -30,6 +31,7 @@ class Siswas extends CI_Controller
     {
         $Msiswas = $this->Msiswas;
         $Msiswas->save();
+        $Msiswas->saveuser();
         redirect('siswas/index', 'refresh');
     }
 
