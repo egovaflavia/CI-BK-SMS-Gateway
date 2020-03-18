@@ -23,8 +23,8 @@ class Bimbingans extends CI_Controller
     public function persiswa()
     {
         $data['databimbingans'] = $this->Mbimbingans->getAllPerSiswa();
-        var_dump($data['databimbingans']);
-        exit;
+        // var_dump($data['databimbingans']);
+        // exit;
         $this->load->view('bimbingans/persiswa', $data);
     }
 
@@ -33,14 +33,22 @@ class Bimbingans extends CI_Controller
     {
         $Mbimbingans = $this->Mbimbingans;
         $Mbimbingans->save();
-
-        redirect('bimbingans/index', 'refresh');
+        if ($this->session->userdata('user_logged')->jabatan == "Siswa") {
+            redirect('bimbingans/persiswa', 'refresh');
+        } else {
+            redirect('bimbingans/index', 'refresh');
+        }
     }
     public function add()
     {
         $data['datasiswas'] = $this->Mbimbingans->getAllSiswa();
         $data['datagurus'] = $this->Mbimbingans->getAllGuru();
         $this->load->view('bimbingans/add', $data);
+    }
+    public function addsiswa()
+    {
+        $data['datagurus'] = $this->Mbimbingans->getAllGuru();
+        $this->load->view('bimbingans/addsiswa', $data);
     }
     //Update one item
     public function edit($id = NULL)

@@ -39,6 +39,7 @@
                             <div class="form-group">
                                 <label>Tanggal Pelanggaran</label>
                                 <input value="<?php echo $datapelanggaran->tgl_plg ?>" name="tgl_plg" type="date" class="form-control" placeholder="tanggal pelanggaran">
+                                <input value="<?php echo $datapelanggaran->id_pelanggaran ?>" name="id" type="hidden" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label>Id Tatib</label>

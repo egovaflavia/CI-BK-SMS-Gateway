@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 17 Mar 2020 pada 21.28
+-- Generation Time: 18 Mar 2020 pada 11.26
 -- Versi Server: 5.6.37
--- PHP Version: 5.6.31
+-- PHP Version: 7.1.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -34,15 +34,14 @@ CREATE TABLE IF NOT EXISTS `bimbingan_siswa` (
   `penyelesaian` varchar(100) NOT NULL,
   `ket_bim` varchar(20) NOT NULL,
   `nip` int(20) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `bimbingan_siswa`
 --
 
 INSERT INTO `bimbingan_siswa` (`id_bimbingan`, `nis`, `tg_bim`, `permasalahan`, `penyelesaian`, `ket_bim`, `nip`) VALUES
-(9, 1308, '2020-03-18', 'Pacaran', 'Putus', 'Belum di Proses', 2147483647),
-(10, 1308, '2020-03-18', 'Galau', 'Tidak ada', 'Belum di Proses', 2147483647);
+(15, 1310, '1987-03-10', 'Voluptatem sint cons', 'Delectus vel omnis ', 'Proses', 242366);
 
 -- --------------------------------------------------------
 
@@ -77,23 +76,16 @@ CREATE TABLE IF NOT EXISTS `minat_bakat` (
   `tgl_mb` date NOT NULL,
   `minat` varchar(100) NOT NULL,
   `bakat` varchar(100) NOT NULL,
-  `ket_mb` varchar(10) NOT NULL,
+  `ket_mb` varchar(100) NOT NULL,
   `nip` int(20) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `minat_bakat`
 --
 
 INSERT INTO `minat_bakat` (`id_mb`, `nis`, `tgl_mb`, `minat`, `bakat`, `ket_mb`, `nip`) VALUES
-(2, 0, '2020-03-02', 'Olahraga', 'Seni', 'Proses', 2147483647),
-(3, 0, '2019-07-16', 'Kesenian', 'Numerik/Perhitungan', 'Proses', 12345678),
-(4, 0, '2019-10-16', 'Kesehatan', 'Public Speaking', 'Proses', 12345678),
-(6, 3386, '2019-10-14', 'Sepak Bola', 'Numerik/Perhitungan', 'Proses', 2147483647),
-(7, 3405, '2019-10-14', 'Sepak Bola', 'Numerik/Perhitungan', 'Proses', 2147483647),
-(8, 3469, '2019-10-16', 'Sepak Takraw', 'Musik/seni', 'Proses', 2147483647),
-(9, 3407, '2019-10-16', 'Kesehatan', 'Analisis', 'Proses', 2147483647),
-(10, 3387, '2019-10-16', 'Kesehatan', 'Public Speaking', 'Proses', 2147483647);
+(15, 1310, '1996-07-10', 'Sit vero amet eum ', 'Excepturi sed id vol', 'Proses', 242366);
 
 -- --------------------------------------------------------
 
@@ -110,21 +102,14 @@ CREATE TABLE IF NOT EXISTS `pelanggaran_siswa` (
   `nip` int(20) NOT NULL,
   `sanksi` varchar(100) NOT NULL,
   `point` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `pelanggaran_siswa`
 --
 
 INSERT INTO `pelanggaran_siswa` (`id_pelanggaran`, `nis`, `tgl_plg`, `id_tatib`, `ket_plg`, `nip`, `sanksi`, `point`) VALUES
-(4, 3477, '2019-07-29', 2, 'Proses', 2147483647, '', 5),
-(5, 3406, '2019-07-29', 7, 'Proses', 2147483647, '', 5),
-(11, 3387, '2019-08-05', 7, 'Proses', 2147483647, '', 5),
-(13, 3458, '2019-07-26', 1, 'Proses', 2147483647, '', 5),
-(15, 3459, '2020-03-12', 23, 'Proses', 2147483647, '', 75),
-(16, 3407, '0000-00-00', 26, 'Proses', 2147483647, '', 100),
-(17, 3461, '2020-03-03', 19, 'Proses', 2147483647, '', 30),
-(18, 3406, '2020-03-04', 10, 'Proses', 2147483647, '', 50);
+(20, 1308, '1999-06-16', 2, 'Proses', 2147483647, '', 0);
 
 -- --------------------------------------------------------
 
@@ -148,7 +133,31 @@ CREATE TABLE IF NOT EXISTS `siswa` (
 --
 
 INSERT INTO `siswa` (`nis`, `ta`, `nm_siswa`, `kelas`, `jekel`, `alamat`, `no_hp_ortu`, `point`) VALUES
-(1308, '2019/2020', 'Egova Riva Gustino', 'XII', 'La', 'Padang', '0819629431', 100);
+(1308, '2019/2020', 'Egova Riva Gustino', 'XII', 'La', 'Padang', '0819629431', 95),
+(1309, '2019/2020', 'Gema Fajar', 'XII', 'La', 'Padang', '081972312', 100),
+(1310, '2019/2020', 'Giska', 'XII', 'Pe', 'Padang', '082391350827', 95),
+(1311, '2019/2020', 'Putra Evans', 'XII', 'La', 'Padang', '082285248130', 100);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `sms`
+--
+
+CREATE TABLE IF NOT EXISTS `sms` (
+  `id_sms` int(11) NOT NULL,
+  `nis` int(11) NOT NULL,
+  `nohp` varchar(100) NOT NULL,
+  `pesan` text NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `sms`
+--
+
+INSERT INTO `sms` (`id_sms`, `nis`, `nohp`, `pesan`) VALUES
+(4, 1310, '082391350827', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, expedita. Hic illum distinctio iste harum eius obcaecati deserunt libero dolores omnis consectetur quis quisquam doloremque necessitatibus, dolorem vitae magni velit.'),
+(5, 1311, '082285248130', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, expedita. Hic illum distinctio iste harum eius obcaecati deserunt libero dolores omnis consectetur quis quisquam doloremque necessitatibus, dolorem vitae magni velit.');
 
 -- --------------------------------------------------------
 
@@ -207,7 +216,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `password` varchar(20) NOT NULL,
   `nama` varchar(20) NOT NULL,
   `jabatan` varchar(20) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `users`
@@ -215,7 +224,10 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`id_user`, `username`, `password`, `nama`, `jabatan`) VALUES
 (1, 'admin', 'admin', 'Winda Octriana, S.Pd', 'Guru BK'),
-(16, '1308', '5e713a0b6e3e1', 'Egova Riva Gustino', 'Siswa');
+(16, '1308', '5e713a0b6e3e1', 'Egova Riva Gustino', 'Siswa'),
+(17, '1309', '5e718b3cdbdf6', 'Gema Fajar', 'Siswa'),
+(18, '1310', '5e71fda767db1', 'Giska', 'Siswa'),
+(19, '1311', '5e720519275fd', 'Putra Evans', 'Siswa');
 
 --
 -- Indexes for dumped tables
@@ -252,6 +264,12 @@ ALTER TABLE `siswa`
   ADD PRIMARY KEY (`nis`);
 
 --
+-- Indexes for table `sms`
+--
+ALTER TABLE `sms`
+  ADD PRIMARY KEY (`id_sms`);
+
+--
 -- Indexes for table `tatatertib`
 --
 ALTER TABLE `tatatertib`
@@ -271,17 +289,22 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `bimbingan_siswa`
 --
 ALTER TABLE `bimbingan_siswa`
-  MODIFY `id_bimbingan` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+  MODIFY `id_bimbingan` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT for table `minat_bakat`
 --
 ALTER TABLE `minat_bakat`
-  MODIFY `id_mb` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+  MODIFY `id_mb` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT for table `pelanggaran_siswa`
 --
 ALTER TABLE `pelanggaran_siswa`
-  MODIFY `id_pelanggaran` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=19;
+  MODIFY `id_pelanggaran` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=21;
+--
+-- AUTO_INCREMENT for table `sms`
+--
+ALTER TABLE `sms`
+  MODIFY `id_sms` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `tatatertib`
 --
@@ -291,7 +314,7 @@ ALTER TABLE `tatatertib`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=20;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

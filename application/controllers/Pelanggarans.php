@@ -19,6 +19,13 @@ class Pelanggarans extends CI_Controller
         $data['datapelanggarans'] = $this->Mpelanggarans->getAll();
         $this->load->view('pelanggarans/index', $data);
     }
+    public function persiswa()
+    {
+        $data['datapelanggarans'] = $this->Mpelanggarans->getAllPerSiswa();
+        // var_dump($data['datapelanggarans']);
+        // exit;
+        $this->load->view('pelanggarans/persiswa', $data);
+    }
     public function save()
     {
         $Mpelanggarans = $this->Mpelanggarans;

@@ -24,38 +24,34 @@
                 <div class="card mb-3">
                     <div class="card-header">
                         <i class="fas fa-table"></i>
-                        Data Bimbingan</div>
+                        Data SMS</div>
                     <div class="card-body">
+                        <a href="<?php echo base_url() ?>sms/add" class="btn btn-primary">Tambah Data</a>
+                        <br>
+                        <br>
                         <div class="table-responsive">
-                            <!-- <a href="<?php echo base_url() ?>bimbingans/addsiswa" class="btn btn-primary">Tambah Data</a>
-                            <br>
-                            <br> -->
                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>NIS</th>
-                                        <th>Nama Siswa</th>
-                                        <th>Tanggal Bimbingan</th>
-                                        <th>Permasalhan</th>
-                                        <th>Penyelesaian</th>
-                                        <th>Keterangan Bimbingan</th>
-                                        <th>NIP</th>
-                                        <th>Nama Guru</th>
+                                        <th>Nis</th>
+                                        <th>Nohp</th>
+                                        <th>Pesan</th>
+                                        <th>Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach ($databimbingans as $no => $databimbingan) : ?>
+                                    <?php foreach ($datasmss as $no => $datasms) :
+                                        // var_dump($datasms);
+                                    ?>
                                         <tr>
-                                            <td><?php echo ++$no ?></td>
-                                            <td><?php echo $databimbingan->nis ?></td>
-                                            <td><?php echo $databimbingan->nm_siswa ?></td>
-                                            <td><?php echo $databimbingan->tg_bim ?></td>
-                                            <td><?php echo $databimbingan->permasalahan ?></td>
-                                            <td><?php echo $databimbingan->penyelesaian ?></td>
-                                            <td><?php echo $databimbingan->ket_bim ?></td>
-                                            <td><?php echo $databimbingan->nip ?></td>
-                                            <td><?php echo $databimbingan->nm_guru ?></td>
+                                            <td width="20px"><?php echo ++$no ?></td>
+                                            <td><?php echo $datasms->nis ?></td>
+                                            <td><?php echo $datasms->nohp ?></td>
+                                            <td><?php echo $datasms->pesan ?></td>
+                                            <td width="60px">
+                                                <a class="btn btn-danger btn-sm" href="<?php echo base_url() ?>sms/delete/<?php echo $datasms->id_sms ?>">Hapus</a>
+                                            </td>
                                         </tr>
                                     <?php endforeach ?>
                                 </tbody>

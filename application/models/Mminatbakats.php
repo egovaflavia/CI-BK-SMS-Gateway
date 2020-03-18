@@ -29,6 +29,17 @@ class Mminatbakats extends CI_Model
     {
         return $this->db->get($this->_tablesiswa)->result();
     }
+    public function getAllPerSiswa()
+    {
+        $nis = $this->session->userdata('user_logged')->username;
+        // return $this->db->get_where($this->_table, array('nis' => $nis))->result();
+        $this->db->select('*');
+        $this->db->from($this->_table);
+        $this->db->join($this->_tablesiswa, 'minat_bakat.nis = siswa.nis');
+        $this->db->join($this->_tableguru, 'minat_bakat.nip = guru.nip');
+        $this->db->where('minat_bakat.nis', $nis);
+        return $this->db->get()->result();
+    }
     public function getAllGuru()
     {
         return $this->db->get($this->_tableguru)->result();

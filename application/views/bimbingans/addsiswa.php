@@ -23,40 +23,45 @@
                 <?php $this->load->view('_partials/breadcrumbs'); ?>
                 <div class="card mb-3 ">
                     <div class="card-header">
-                        <a href="<?php echo base_url() ?>minatbakats/index"><i class="fas fa-arrow-left"></i> Back</a>
+                        <a href="<?php echo base_url() ?>bimbingans/index"><i class="fas fa-arrow-left"></i> Back</a>
                     </div>
                     <div class="card-body">
+                        <?php //var_dump($datagurus) 
+                        ?>
+                        <form action="<?php echo base_url() ?>bimbingans/save" method="post" enctype="multipart/form-data">
 
-                        <form action="<?php echo base_url() ?>minatbakats/update" method="post" enctype="multipart/form-data">
                             <div class="form-group">
-                                <label>NIS</label>
-                                <input value="<?php echo $dataminatbakat->id_mb ?>" name="id" type="hidden">
-                                <input value="<?php echo $dataminatbakat->nis ?>" name="nis" type="number" class="form-control" placeholder="nis" readonly>
+                                <label>Siswa yang Bimbingan</label>
+                                <input name="nis" type="text" class="form-control" value="<?php echo $this->session->userdata('user_logged')->username ?>" readonly>
                             </div>
                             <div class="form-group">
-                                <label>Tanggal Minat Bakat</label>
-                                <input value="<?php echo $dataminatbakat->tgl_mb ?>" name="tgl_mb" type="date" class="form-control" placeholder="tanggal">
+                                <label>Tanggal Bimbingan</label>
+                                <input name="tg_bim" type="date" class="form-control" placeholder="tg_bim">
                             </div>
                             <div class="form-group">
-                                <label>Minat</label>
-                                <input value="<?php echo $dataminatbakat->minat ?>" name="minat" type="text" class="form-control" placeholder="minat">
+                                <label>Permasalahan</label>
+                                <input name="permasalahan" type="text" class="form-control" placeholder="permasalahan">
                             </div>
                             <div class="form-group">
-                                <label>Bakat</label>
-                                <input value="<?php echo $dataminatbakat->bakat ?>" name="bakat" type="text" class="form-control" placeholder="bakat">
+                                <!-- <label>Penyelesaian</label> -->
+                                <input value="Harap Segera Di Proses" name="penyelesaian" type="hidden" class="form-control" placeholder="penyelesaian">
                             </div>
-                            <div class="form-group">
-                                <label>Keterangan Minat Bakat</label>
-                                <select name="ket_mb" class="form-control">
+                            <input name="ket_bim" type="hidden" value="Belum di Proses" class="form-control">
+                            <!-- <div class="form-group">
+                                <label>Keterangan Bimbingan</label>
+                                <select name="ket_bim" class="form-control">
                                     <option value="Proses">Proses</option>
                                     <option value="Belum di Proses">Belum di Proses</option>
                                 </select>
-                            </div>
+                            </div> -->
                             <div class="form-group">
-                                <label>NIP</label>
-                                <input value="<?php echo $dataminatbakat->nip ?>" name="nip" type="number" class="form-control" placeholder="nip">
+                                <label>Guru yang Menangani</label>
+                                <select name="nip" class="form-control">
+                                    <?php foreach ($datagurus as $dataguru) : ?>
+                                        <option value="<?php echo $dataguru->nip ?>"><?php echo $dataguru->nm_guru ?></option>
+                                    <?php endforeach ?>
+                                </select>
                             </div>
-
                             <input class="btn btn-success" type="submit" name="btn" value="Save">
                         </form>
                     </div>

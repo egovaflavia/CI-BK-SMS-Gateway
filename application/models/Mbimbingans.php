@@ -28,11 +28,19 @@ class Mbimbingans extends CI_Model
     {
         return $this->db->get($this->_tablesiswa)->result();
     }
+
     public function getAllPerSiswa()
     {
         $nis = $this->session->userdata('user_logged')->username;
-        return $this->db->get_where($this->_table, array('nis' => $nis))->result();
+        // return $this->db->get_where($this->_table, array('nis' => $nis))->result();
+        $this->db->select('*');
+        $this->db->from($this->_table);
+        $this->db->join($this->_tablesiswa, 'bimbingan_siswa.nis = siswa.nis');
+        $this->db->join($this->_tableguru, 'bimbingan_siswa.nip = guru.nip');
+        $this->db->where('bimbingan_siswa.nis', $nis);
+        return $this->db->get()->result();
     }
+
 
     public function getAllGuru()
     {

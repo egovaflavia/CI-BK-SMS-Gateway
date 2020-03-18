@@ -19,6 +19,13 @@ class Minatbakats extends CI_Controller
         $data['dataminatbakats'] = $this->Mminatbakats->getAll();
         $this->load->view('minatbakats/index', $data);
     }
+    public function persiswa()
+    {
+        $data['dataminatbakats'] = $this->Mminatbakats->getAllPerSiswa();
+        // var_dump($data['dataminatbakats']);
+        // exit;
+        $this->load->view('minatbakats/persiswa', $data);
+    }
     public function save()
     {
         $Mminatbakats = $this->Mminatbakats;

@@ -24,38 +24,36 @@
                 <div class="card mb-3">
                     <div class="card-header">
                         <i class="fas fa-table"></i>
-                        Data Bimbingan</div>
+                        Data Minat Bakat</div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <!-- <a href="<?php echo base_url() ?>bimbingans/addsiswa" class="btn btn-primary">Tambah Data</a>
-                            <br>
-                            <br> -->
                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                 <thead>
                                     <tr>
                                         <th>No</th>
                                         <th>NIS</th>
                                         <th>Nama Siswa</th>
-                                        <th>Tanggal Bimbingan</th>
-                                        <th>Permasalhan</th>
-                                        <th>Penyelesaian</th>
-                                        <th>Keterangan Bimbingan</th>
+                                        <th>Tanggal Minat dan Bakat</th>
+                                        <th>Minat</th>
+                                        <th>Bakat</th>
+                                        <th>Keterangan Minat Bakat</th>
                                         <th>NIP</th>
                                         <th>Nama Guru</th>
+                                        </th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach ($databimbingans as $no => $databimbingan) : ?>
+                                    <?php foreach ($dataminatbakats as $no => $dataminatbakat) : ?>
                                         <tr>
                                             <td><?php echo ++$no ?></td>
-                                            <td><?php echo $databimbingan->nis ?></td>
-                                            <td><?php echo $databimbingan->nm_siswa ?></td>
-                                            <td><?php echo $databimbingan->tg_bim ?></td>
-                                            <td><?php echo $databimbingan->permasalahan ?></td>
-                                            <td><?php echo $databimbingan->penyelesaian ?></td>
-                                            <td><?php echo $databimbingan->ket_bim ?></td>
-                                            <td><?php echo $databimbingan->nip ?></td>
-                                            <td><?php echo $databimbingan->nm_guru ?></td>
+                                            <td><?php echo $dataminatbakat->nis ?></td>
+                                            <td><?php echo $dataminatbakat->nm_siswa ?></td>
+                                            <td><?php echo $dataminatbakat->tgl_mb ?></td>
+                                            <td><?php echo $dataminatbakat->minat ?></td>
+                                            <td><?php echo $dataminatbakat->bakat ?></td>
+                                            <td><?php echo $dataminatbakat->ket_mb ?></td>
+                                            <td><?php echo $dataminatbakat->nip ?></td>
+                                            <td><?php echo $dataminatbakat->nm_guru ?></td>
                                         </tr>
                                     <?php endforeach ?>
                                 </tbody>

@@ -13,12 +13,12 @@
                 <span>Data Bimbingan</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url() ?>pelanggarans">
+            <a class="nav-link" href="<?php echo base_url() ?>pelanggarans/persiswa">
                 <i class="fas fa-fw fa-bullhorn"></i>
                 <span>Data Pelanggaran</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url() ?>minatbakats">
+            <a class="nav-link" href="<?php echo base_url() ?>minatbakats/persiswa">
                 <i class="fas fa-fw fa-child"></i>
                 <span>Data Minat dan Bakat</span></a>
         </li>
@@ -84,7 +84,7 @@
                 <span>Data Minat dan Bakat</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url() ?>tatibs">
+            <a class="nav-link" href="<?php echo base_url() ?>sms">
                 <i class="fas fa-fw fa-phone"></i>
                 <span>SMS Gateway</span></a>
         </li>
